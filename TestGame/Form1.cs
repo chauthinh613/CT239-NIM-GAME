@@ -5,6 +5,8 @@
         int itemWidth = 50;
         int itemHeigh = 50;
 
+
+
         public Form1()
         {
             InitializeComponent();
@@ -14,8 +16,10 @@
         {
             panel1.Controls.Clear(); //xoá hết tất cả trong panel
 
+            int n = (int)numericUpDown1.Value; //phải ép kiểu
+            GameLogic gameLogic = new GameLogic(n);
 
-            for(int i = 1; i <= 5; i++)
+            for (int i = 1; i <= gameLogic.n; i++)
             {
                 Button btn = new Button();
                 btn.Text = i.ToString();
@@ -24,7 +28,7 @@
                 btn.Top = 10;
                 btn.Left = 10 + (itemWidth + 5) * i;
                 //btn.BackColor = Color.Transparent;
-                btn.FlatStyle = FlatStyle.Flat;        
+                btn.FlatStyle = FlatStyle.Flat;
                 //btn.FlatAppearance.BorderSize = 0;
                 btn.BackgroundImage = Image.FromFile(@"D:/Download/bolt.png");
                 btn.BackgroundImageLayout = ImageLayout.Zoom;
@@ -47,6 +51,11 @@
         {
             Button clickedBtn = (Button)sender;
             clickedBtn.Visible = false;
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

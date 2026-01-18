@@ -15,3 +15,4 @@ D:\File\VisualStudioProject\NimGame\TestGame\obj\Debug\net10.0-windows\TestGame.
 D:\File\VisualStudioProject\NimGame\TestGame\obj\Debug\net10.0-windows\TestGame.genruntimeconfig.cache
 D:\File\VisualStudioProject\NimGame\TestGame\obj\Debug\net10.0-windows\ref\TestGame.dll
 D:\File\VisualStudioProject\NimGame\TestGame\obj\Debug\net10.0-windows\TestGame.Properties.Resources.resources
+D:\File\VisualStudioProject\NimGame\TestGame\obj\Debug\net10.0-windows\TestGame.sourcelink.json

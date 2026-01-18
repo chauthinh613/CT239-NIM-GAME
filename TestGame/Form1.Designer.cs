@@ -31,19 +31,21 @@
             panel1 = new Panel();
             button1 = new Button();
             button2 = new Button();
+            numericUpDown1 = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Location = new Point(53, 44);
             panel1.Name = "panel1";
-            panel1.Size = new Size(458, 135);
+            panel1.Size = new Size(703, 135);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
             // button1
             // 
-            button1.Location = new Point(64, 227);
+            button1.Location = new Point(53, 276);
             button1.Name = "button1";
             button1.Size = new Size(154, 59);
             button1.TabIndex = 1;
@@ -62,16 +64,26 @@
             button2.TabIndex = 2;
             button2.UseVisualStyleBackColor = true;
             // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(53, 243);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(154, 27);
+            numericUpDown1.TabIndex = 3;
+            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(numericUpDown1);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(panel1);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
         }
 
@@ -80,5 +92,6 @@
         private Panel panel1;
         private Button button1;
         private Button button2;
+        private NumericUpDown numericUpDown1;
     }
 }
