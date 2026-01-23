@@ -1,5 +1,7 @@
 <Solution>
   <Project Path="NimGame/NimGame.csproj" />
   <Project Path="TestGame/TestGame.csproj" />
+  <Project Path="TestGUI/TestGUI.csproj" Id="d06ccf29-52d0-4d2c-91c6-4cb9fe74eb0c" />
   <Project Path="TestLogic/TestLogic.csproj" Id="af834ac2-83c5-4958-9a8b-9f957c5a5022" />
+  <Project Path="WinformGUITest/WinformGUITest.csproj" Id="7451fd6b-738c-4134-8ed6-536976878ae1" />
 </Solution>

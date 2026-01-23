@@ -6,11 +6,13 @@ namespace TestLogic
 {
     internal class MainGame
     {
-        private int pilesCount;
-        private int[] piles;
+        private int pilesCount; //số lượng đống
+        private int[] piles; // [0]: hàng 1; [1]: hàng 2
         private bool currentPlayer; //false = player 1, true = player 2
         private bool isGameOver;
 
+
+        // piles[4] = int[]{1,2,3,4};
         public MainGame(int[] piles)
         {
             this.piles = piles;
@@ -71,12 +73,14 @@ namespace TestLogic
         }
 
         public bool checkGameOver()
-        {
+        { 
+            //duyệt từng đống
             for(int i = 0; i < this.pilesCount; i++)
             {
                 if (piles[i] > 0) return false;
             }
             return true;
+
         }
 
         public void removeItems(int chosenPile, int chosenItems)
@@ -106,15 +110,61 @@ namespace TestLogic
                 if(!validationCheck(chosenPile, chosenItems)) continue;
 
                 removeItems(chosenPile, chosenItems);
+                //hàng 2, xoá 3
+                //piles[chosenPile - 1] = piles[chosenPile - 1] - chosenItems;
 
-
-                currentPlayer = !currentPlayer;
+                //false -> true
+                currentPlayer = !currentPlayer; //đổi lượt
+                //hàm gì đó máy xử lý
 
                 isGameOver = checkGameOver();
 
             } while (!this.isGameOver);
 
             
+            Console.Clear();
+            PrintGame();
+
+            Console.WriteLine("-------------------------");
+            Console.WriteLine("Chuc mung nguoi choi {0} chien thang!", !currentPlayer);
+
+        }
+
+        public void AiProcess() //sử dụng để test trên console
+        {
+            //khởi tạo trò chơi
+            //InitGame();
+
+            int chosenItems;
+            int chosenPile;
+
+            do
+            {
+                //Console.Clear();
+
+                PrintGame();
+
+                Console.Write("Chon mot hang: ");
+                chosenPile = int.Parse(Console.ReadLine());
+
+                Console.Write("Chon so luong: ");
+                chosenItems = int.Parse(Console.ReadLine());
+
+                if (!validationCheck(chosenPile, chosenItems)) continue;
+
+                removeItems(chosenPile, chosenItems);
+                //hàng 2, xoá 3
+                //piles[chosenPile - 1] = piles[chosenPile - 1] - chosenItems;
+
+         
+                machinePlayer();
+                //hàm gì đó máy xử lý
+
+                isGameOver = checkGameOver();
+
+            } while (!this.isGameOver);
+
+
             Console.Clear();
             PrintGame();
 
@@ -153,11 +203,39 @@ namespace TestLogic
             return true;
         }
 
+        public void machinePlayer()
+        {
+            int nimSum = 0;
+            int[] nimSumArr = new int[this.pilesCount];
+
+            for(int i = 0; i < this.pilesCount; i++)
+            {
+                nimSum = nimSum ^ this.piles[i];
+            }
+
+            for(int i = 0; i < this.pilesCount; i++)
+            {
+                nimSumArr[i] = nimSum ^ this.piles[i];
+                if (nimSumArr[i] < this.piles[i]) {
+
+                    int sub = this.piles[i] - nimSumArr[i];
+                    this.piles[i] -= sub;
+                    Console.WriteLine("May chon hang {0} voi so luong {1}: ", i + 1, sub);
+
+                    break;
+                }
+            }
+        }
+
         public static void Main(string[] args)
         {
             int[] piles = new int[] { 5, 6, 1 };
             MainGame game = new MainGame(piles, true);
-            game.Process();
+            game.AiProcess();
         }
     }
+
+
+
+    
 }
