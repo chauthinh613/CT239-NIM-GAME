@@ -28,112 +28,89 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             tableLayoutPanel1 = new TableLayoutPanel();
             boardPanel = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
-            tableLayoutPanel4 = new TableLayoutPanel();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            finishTurn = new Button();
+            player1Button = new Button();
+            player2Button = new Button();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
-            tableLayoutPanel4.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.BackColor = SystemColors.Info;
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(boardPanel, 0, 0);
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 1);
+            tableLayoutPanel1.Controls.Add(boardPanel, 0, 1);
+            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(582, 753);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // boardPanel
             // 
             boardPanel.Anchor = AnchorStyles.None;
-            boardPanel.Location = new Point(166, 238);
+            boardPanel.Location = new Point(166, 242);
             boardPanel.Name = "boardPanel";
             boardPanel.Size = new Size(250, 125);
             boardPanel.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.ColumnCount = 1;
+            tableLayoutPanel2.ColumnCount = 5;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Controls.Add(tableLayoutPanel4, 0, 1);
-            tableLayoutPanel2.Controls.Add(finishTurn, 0, 0);
+            tableLayoutPanel2.Controls.Add(player1Button, 1, 0);
+            tableLayoutPanel2.Controls.Add(player2Button, 3, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(3, 605);
+            tableLayoutPanel2.Location = new Point(3, 593);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 2;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Size = new Size(576, 145);
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Size = new Size(576, 136);
             tableLayoutPanel2.TabIndex = 1;
             // 
-            // tableLayoutPanel4
+            // player1Button
             // 
-            tableLayoutPanel4.ColumnCount = 3;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel4.Controls.Add(button1, 0, 0);
-            tableLayoutPanel4.Controls.Add(button2, 1, 0);
-            tableLayoutPanel4.Controls.Add(button3, 2, 0);
-            tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(3, 75);
-            tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 1;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.Size = new Size(570, 67);
-            tableLayoutPanel4.TabIndex = 1;
+            player1Button.BackgroundImage = (Image)resources.GetObject("player1Button.BackgroundImage");
+            player1Button.BackgroundImageLayout = ImageLayout.Zoom;
+            player1Button.Dock = DockStyle.Fill;
+            player1Button.FlatAppearance.BorderSize = 0;
+            player1Button.FlatStyle = FlatStyle.Flat;
+            player1Button.Location = new Point(161, 3);
+            player1Button.Name = "player1Button";
+            player1Button.Size = new Size(114, 130);
+            player1Button.TabIndex = 2;
+            player1Button.TabStop = false;
+            player1Button.UseVisualStyleBackColor = true;
+            player1Button.Click += finishTurn_Click;
             // 
-            // button1
+            // player2Button
             // 
-            button1.Location = new Point(3, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(193, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(383, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 29);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // finishTurn
-            // 
-            finishTurn.Dock = DockStyle.Fill;
-            finishTurn.Location = new Point(3, 3);
-            finishTurn.Name = "finishTurn";
-            finishTurn.Size = new Size(570, 66);
-            finishTurn.TabIndex = 2;
-            finishTurn.Text = "OK";
-            finishTurn.UseVisualStyleBackColor = true;
-            finishTurn.Click += finishTurn_Click;
+            player2Button.BackgroundImage = (Image)resources.GetObject("player2Button.BackgroundImage");
+            player2Button.BackgroundImageLayout = ImageLayout.Zoom;
+            player2Button.Dock = DockStyle.Fill;
+            player2Button.FlatAppearance.BorderSize = 0;
+            player2Button.FlatStyle = FlatStyle.Flat;
+            player2Button.Location = new Point(301, 3);
+            player2Button.Name = "player2Button";
+            player2Button.Size = new Size(114, 130);
+            player2Button.TabIndex = 3;
+            player2Button.TabStop = false;
+            player2Button.UseVisualStyleBackColor = true;
+            player2Button.Click += button1_Click;
             // 
             // GameForm
             // 
@@ -147,7 +124,6 @@
             Load += GameForm_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -156,10 +132,7 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Panel boardPanel;
         private TableLayoutPanel tableLayoutPanel2;
-        private TableLayoutPanel tableLayoutPanel4;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button finishTurn;
+        private Button player1Button;
+        private Button player2Button;
     }
 }

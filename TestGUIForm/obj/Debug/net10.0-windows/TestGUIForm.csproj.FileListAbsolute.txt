@@ -24,3 +24,4 @@ D:\File\VisualStudioProject\NimGame\TestGUIForm\bin\Debug\net10.0-windows\TestLo
 D:\File\VisualStudioProject\NimGame\TestGUIForm\bin\Debug\net10.0-windows\TestLogic.pdb
 D:\File\VisualStudioProject\NimGame\TestGUIForm\obj\Debug\net10.0-windows\TestGUIForm.csproj.AssemblyReference.cache
 D:\File\VisualStudioProject\NimGame\TestGUIForm\obj\Debug\net10.0-windows\TestGUIF.72154A13.Up2Date
+D:\File\VisualStudioProject\NimGame\TestGUIForm\obj\Debug\net10.0-windows\TestGUIForm.Properties.Resources.resources

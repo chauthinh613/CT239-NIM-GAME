@@ -36,6 +36,7 @@ namespace TestGUIForm
 
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(game);
+            MainPanel.BackColor = Color.LightYellow;
 
             game.GameOver += MenuForm_Load;
 
