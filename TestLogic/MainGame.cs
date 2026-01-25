@@ -4,12 +4,17 @@ using System.Text;
 
 namespace TestLogic
 {
-    internal class MainGame
+    public class MainGame
     {
         private int pilesCount; //số lượng đống
         private int[] piles; // [0]: hàng 1; [1]: hàng 2
         private bool currentPlayer; //false = player 1, true = player 2
         private bool isGameOver;
+
+        public int PilesCount { get { return pilesCount; } set; }
+        public int[] Piles { get { return piles; } set; }
+        public bool CurrentPlayer { get { return currentPlayer; } set; }
+        public bool IsGameOver { get { return isGameOver; } set; }
 
 
         // piles[4] = int[]{1,2,3,4};
