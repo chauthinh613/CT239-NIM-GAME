@@ -14,7 +14,7 @@ namespace WinformGUITest
         public GameControl()
         {
             this.BackColor = Color.Aquamarine;
-            MessageBox.Show(string.Format("{0}", .Width));
+            //MessageBox.Show(string.Format("{0}", .Width));
             InitializeComponent();
             CreateBoard(10, 10);
         }
@@ -32,7 +32,7 @@ namespace WinformGUITest
             //boardPanel.Dock = DockStyle.Fill;
             //boardPanel.Anchor = AnchorStyles.None;
 
-            boardPanel.Dock = DockStyle.None;
+            boardPanel.Dock = DockStyle.Fill;
             boardPanel.Anchor = AnchorStyles.None;
 
 

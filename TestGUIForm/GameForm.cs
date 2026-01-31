@@ -12,8 +12,9 @@ namespace TestGUIForm
         SoundPlayer switchPlayer = new SoundPlayer(@"D:\Download\mixkit-on-or-off-light-switch-tap-2585.wav");
         SoundPlayer winnerSound = new SoundPlayer(@"D:\Download\mixkit-video-game-win-2016.wav");
         SoundPlayer biteSound = new SoundPlayer(@"D:\Download\carrotnom-92106.wav");
+        SoundPlayer selectItems = new SoundPlayer(@"D:\Download\mixkit-cool-interface-click-tone-2568.wav");
 
-        private int caroSize = 50;
+        private int caroSize = 48;
         MainGame game;
         public GameForm()
         {
@@ -27,7 +28,7 @@ namespace TestGUIForm
 
         public void InitGame()
         {
-            game = new MainGame(5, 1, 10);
+            game = new MainGame(6, 1, 7 + 1);
             int max = 0;
             for (int i = 0; i < game.PilesCount; i++)
             {
@@ -48,6 +49,7 @@ namespace TestGUIForm
                 player2Button.Margin = new Padding(0);
                 player1Button.Margin = new Padding(10);
             }
+            chosenPosition = new int[max];
 
         }
         public void CreateBoardBackground(int rows, int cols, int[] piles)
@@ -57,11 +59,15 @@ namespace TestGUIForm
             boardPanel.Size = new Size(cols * caroSize, rows * caroSize);
             //boardPanel.BorderStyle = BorderStyle.FixedSingle;
 
-            int count = 0;
+            int count = 1;
 
             for (int i = 0; i < rows; i++)
             {
-                count++;
+                Random r = new Random();
+                int t = r.Next(1, 5 + 1);
+                if (t == count) t = (t % 5 + 1);
+                count = t;
+
                 for (int j = 0; j < cols; j++)
                 {
                     Panel caro = new Panel();
@@ -71,12 +77,13 @@ namespace TestGUIForm
                     else caro.BackColor = Color.LightYellow;
                     caro.Location = new Point(j * caroSize, i * caroSize);
 
-  
+
 
                     //quan trọng
                     if (j < piles[i])
                     {
                         string path = "";
+
                         if (count == 3) path = @"D:\Download\carrot.png";
                         else if (count == 4) path = @"D:\Download\avocado.png";
                         else if (count == 1) path = @"D:\Download\cherry.png";
@@ -95,7 +102,7 @@ namespace TestGUIForm
         {
             Button coin = new Button();
 
-            coin.Size = new Size(40, 40);
+            coin.Size = new Size(38, 38);
             coin.Location = new Point(5, 5);
 
 
@@ -113,15 +120,33 @@ namespace TestGUIForm
             coin.Tag = new Point(i, j);
 
             coin.Click += Coin_Click;
+            coin.MouseEnter += Enter_Effect;
+            coin.MouseLeave += Leave_Effect;
 
             return coin;
         }
 
+        private void Enter_Effect(object? sender, EventArgs e)
+        {
+            Button coin = sender as Button;
 
+            selectItems.Play();
+            coin.Size = new Size(46, 46);
+            coin.Location = new Point(1, 1);
+        }
+
+        private void Leave_Effect(object? sender, EventArgs e)
+        {
+            Button coin = sender as Button;
+
+            coin.Size = new Size(38, 38);
+            coin.Location = new Point(5, 5);
+        }
 
         private bool inTurnCheck;
         private int chosenPile;
         private int chosenItems;
+        private int[] chosenPosition;
         private void Coin_Click(object? sender, EventArgs e)
         {
             Button coin = sender as Button;
@@ -147,6 +172,8 @@ namespace TestGUIForm
             }
             else
             {
+                chosenPosition[chosenItems] = position.X;
+
                 chosenItems += 1;
                 coin.Visible = false;
                 if (chosenItems == game.Piles[position.X]) FinishTurn();
@@ -205,7 +232,7 @@ namespace TestGUIForm
             if (chosenItems != 0)
             {
                 FinishTurn();
-                
+
             }
         }
 
@@ -215,6 +242,12 @@ namespace TestGUIForm
             inTurnCheck = false;
             chosenPile = 0;
             chosenItems = 0;
+
+            for (int i = 0; i < chosenPosition.Length; i++)
+            {
+                chosenPosition[i] = -1;
+            }
+
 
             ControlChange();
 
@@ -231,7 +264,7 @@ namespace TestGUIForm
             if (chosenItems != 0)
             {
                 FinishTurn();
-                
+
             }
 
         }
@@ -248,13 +281,35 @@ namespace TestGUIForm
                 player2Button.Margin = new Padding(10);
                 player2Button.BackgroundImage = Image.FromFile(@"D:\Download\cat_unable.png");
                 player1Button.Margin = new Padding(0);
+                player1Button.BackgroundImage = Image.FromFile(@"D:\Download\dog.png");
             }
             else
             {
                 player2Button.Margin = new Padding(0);
                 player1Button.Margin = new Padding(10);
                 player2Button.BackgroundImage = Image.FromFile(@"D:\Download\cat.png");
+                player1Button.BackgroundImage = Image.FromFile(@"D:\Download\dog_unable.png");
             }
+        }
+
+        private void tableLayoutPanel3_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            GameOver?.Invoke();
+        }
+
+        private void boardPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

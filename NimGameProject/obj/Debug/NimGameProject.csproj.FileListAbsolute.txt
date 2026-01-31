@@ -1,0 +1,12 @@
+D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\NimGameProject.exe.config
+D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\NimGameProject.exe
+D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\NimGameProject.pdb
+D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.csproj.AssemblyReference.cache
+D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.Properties.Resources.resources
+D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.csproj.GenerateResource.cache
+D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.csproj.CoreCompileInputs.cache
+D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.exe
+D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.pdb
+D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.Forms.MainForm.resources
+D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.Forms.GameForm.resources
+D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.Forms.MenuForm.resources

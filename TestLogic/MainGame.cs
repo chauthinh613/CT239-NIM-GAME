@@ -11,6 +11,7 @@ namespace TestLogic
         private bool currentPlayer; //false = player 1, true = player 2
         private bool isGameOver;
 
+
         public int PilesCount { get { return pilesCount; } set; }
         public int[] Piles { get { return piles; } set; }
         public bool CurrentPlayer { get { return currentPlayer; } set; }
@@ -25,6 +26,7 @@ namespace TestLogic
 
             this.currentPlayer = false;
             this.isGameOver = false;
+
         }
 
         //sử dụng khi load game

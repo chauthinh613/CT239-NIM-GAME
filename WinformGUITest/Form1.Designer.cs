@@ -38,6 +38,7 @@
             mainPanel.Name = "mainPanel";
             mainPanel.Size = new Size(582, 753);
             mainPanel.TabIndex = 0;
+            mainPanel.Paint += mainPanel_Paint;
             // 
             // mainForm
             // 

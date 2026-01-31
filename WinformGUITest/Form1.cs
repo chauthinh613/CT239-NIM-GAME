@@ -19,7 +19,6 @@ namespace WinformGUITest
             MenuControl menu = new MenuControl();
 
             menu.Dock = DockStyle.Fill;
-            menu.Anchor = AnchorStyles.None;
             mainPanel.Controls.Add(menu);
 
             menu.PvPButtonClicked += ShowGame;
@@ -28,8 +27,16 @@ namespace WinformGUITest
         private void ShowGame()
         {
             mainPanel.Controls.Clear();
+
+            GameControl game = new GameControl();
+            game.Dock = DockStyle.Fill;
+
             mainPanel.Controls.Add(new GameControl());
         }
 
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

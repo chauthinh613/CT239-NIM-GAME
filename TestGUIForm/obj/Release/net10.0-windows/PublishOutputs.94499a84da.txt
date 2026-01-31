@@ -1,0 +1,10 @@
+D:\File\Release\TestLogic.exe
+D:\File\Release\TestGUIForm.exe
+D:\File\Release\TestLogic.deps.json
+D:\File\Release\TestLogic.runtimeconfig.json
+D:\File\Release\TestGUIForm.dll
+D:\File\Release\TestGUIForm.deps.json
+D:\File\Release\TestGUIForm.runtimeconfig.json
+D:\File\Release\TestGUIForm.pdb
+D:\File\Release\TestLogic.dll
+D:\File\Release\TestLogic.pdb

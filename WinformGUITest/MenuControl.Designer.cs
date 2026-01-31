@@ -28,23 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             pvpButton = new Button();
             pveButton = new Button();
             button3 = new Button();
+            label1 = new Label();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 30F);
-            label1.Location = new Point(170, 142);
-            label1.Name = "label1";
-            label1.Size = new Size(274, 67);
-            label1.TabIndex = 0;
-            label1.Text = "NIM GAME";
             // 
             // tableLayoutPanel1
             // 
@@ -52,26 +42,32 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.Controls.Add(pvpButton, 1, 0);
-            tableLayoutPanel1.Controls.Add(pveButton, 1, 2);
-            tableLayoutPanel1.Controls.Add(button3, 1, 4);
-            tableLayoutPanel1.Location = new Point(0, 240);
+            tableLayoutPanel1.Controls.Add(pvpButton, 1, 3);
+            tableLayoutPanel1.Controls.Add(pveButton, 1, 5);
+            tableLayoutPanel1.Controls.Add(button3, 1, 7);
+            tableLayoutPanel1.Controls.Add(label1, 1, 1);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 6;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel1.Size = new Size(600, 292);
+            tableLayoutPanel1.RowCount = 10;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.Size = new Size(550, 700);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // pvpButton
             // 
-            pvpButton.Location = new Point(123, 3);
+            pvpButton.Location = new Point(113, 213);
             pvpButton.Name = "pvpButton";
-            pvpButton.Size = new Size(354, 42);
+            pvpButton.Size = new Size(324, 64);
             pvpButton.TabIndex = 0;
             pvpButton.Text = "Chơi Với Người";
             pvpButton.UseVisualStyleBackColor = true;
@@ -79,42 +75,52 @@
             // 
             // pveButton
             // 
-            pveButton.Location = new Point(123, 99);
+            pveButton.Location = new Point(113, 353);
             pveButton.Name = "pveButton";
-            pveButton.Size = new Size(354, 42);
+            pveButton.Size = new Size(324, 64);
             pveButton.TabIndex = 1;
             pveButton.Text = "Chơi Với Máy";
             pveButton.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            button3.Location = new Point(123, 195);
+            button3.Location = new Point(113, 493);
             button3.Name = "button3";
-            button3.Size = new Size(354, 42);
+            button3.Size = new Size(324, 64);
             button3.TabIndex = 2;
             button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 25F);
+            label1.Location = new Point(159, 76);
+            label1.Name = "label1";
+            label1.Size = new Size(232, 57);
+            label1.TabIndex = 3;
+            label1.Text = "NIM GAME";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // MenuControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(label1);
             Name = "MenuControl";
-            Size = new Size(600, 700);
+            Size = new Size(550, 700);
             Load += MenuControl_Load;
             tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
         private TableLayoutPanel tableLayoutPanel1;
         private Button pvpButton;
         private Button pveButton;
         private Button button3;
+        private Label label1;
     }
 }
