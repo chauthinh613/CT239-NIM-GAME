@@ -48,14 +48,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 800F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(582, 803);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(602, 803);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panelMain
             // 
+            this.panelMain.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelMain.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(-6, 4);
+            this.panelMain.Location = new System.Drawing.Point(4, 4);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(594, 794);
             this.panelMain.TabIndex = 0;
@@ -64,11 +64,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 803);
+            this.BackColor = System.Drawing.Color.LemonChiffon;
+            this.ClientSize = new System.Drawing.Size(602, 803);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(600, 800);
+            this.MinimumSize = new System.Drawing.Size(620, 850);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NimFruits";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

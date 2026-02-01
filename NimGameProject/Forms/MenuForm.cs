@@ -13,6 +13,7 @@ namespace NimGameProject.Forms
     public partial class MenuForm : Form
     {
         public event Action ButtonPVEClicked;
+        public event Action ButtonPVPClicked;
         public MenuForm()
         {
             InitializeComponent();
@@ -20,7 +21,12 @@ namespace NimGameProject.Forms
 
         private void buttonPVE_Click(object sender, EventArgs e)
         {
-            ButtonPVEClicked?.Invoke();
+            ButtonPVEClicked.Invoke();
+        }
+
+        private void buttonPVP_Click(object sender, EventArgs e)
+        {
+            ButtonPVPClicked.Invoke();
         }
     }
 }

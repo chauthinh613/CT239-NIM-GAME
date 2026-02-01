@@ -4,33 +4,90 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace NimGameProject.Forms
 {
     public partial class GameForm : Form
     {
+        string player2EnableImagePath;
+        string player2UnableImagePath;
+
         GameEngine game;
+
+        GameState gameInit; //lưu trạng thái đầu tiên của game để có gì reset
+
         public event Action ExitToMenu;
 
-        private int caroSize = 48;
+        private int caroSize;
+        private int itemSize;
+
+        private bool isPVP;
         public GameForm()
         {
             InitializeComponent();
         }
 
-        private void GameForm_Load(object sender, EventArgs e)
+        public GameForm(bool isPVP)
         {
-            game = new GameEngine(true, false, new GameState(3, 1, 3));
+            InitializeComponent();
+            this.isPVP = isPVP;
+
+            if (isPVP)
+            {
+                player2EnableImagePath = @"D:\Download\cat.png";
+                player2UnableImagePath = @"D:\Download\cat_unable.png";
+            }
+            else
+            {
+                player2EnableImagePath = @"D:\Download\computer.png";
+                player2UnableImagePath = @"D:\Download\computer_unable.png";
+            }
+
+        }
+
+        private void InitGame()
+        {
+            AdjustSize(game.GameState.PilesCount, game.GameState.GetMaxInPiles());
 
             game.SwitchPlayerEvent += AdjustPlayerButton;
             game.GameOverEvent += GameOver;
+            game.ChosenPileEvent += RowSelectedEffect;
+            game.ComputerMoveEvent += ComputerMove;
+            game.ResetRowEffectEvent += ResetRowEffect;
+
+            InitGameBoard();
+        }
+        private void GameForm_Load(object sender, EventArgs e)
+        {
+            game = new GameEngine(isPVP, true, new GameState(8,1,8));
+
+            gameInit = game.GameState.CloneGameState();
+
 
             InitGame();
 
+        }
+
+        public void AdjustSize(int pilesCount, int max) //chỉnh kích thước nếu ít thì cho bự, nhiều thì cho nhỏ lại
+        {
+            if(pilesCount <= 7 && max <= 7)
+            {
+                caroSize = 50;
+                itemSize = 40;
+            }
+            else
+            {
+                caroSize = 42;
+                itemSize = 32;
+            }
         }
 
         public void GameOver()
@@ -38,7 +95,7 @@ namespace NimGameProject.Forms
             ExitToMenu?.Invoke();
         }
 
-        public void InitGame()
+        public void InitGameBoard()
         {
 
             int rows = game.Board.GetLength(0);
@@ -55,7 +112,6 @@ namespace NimGameProject.Forms
             panelBoard.Size = new Size(cols * caroSize, rows * caroSize);
             //panelBoard.BorderStyle = BorderStyle.FixedSingle;
 
-            
 
             int count = 1;
 
@@ -63,8 +119,8 @@ namespace NimGameProject.Forms
             {
 
                 Random r = new Random();
-                int t = r.Next(1, 5 + 1);
-                if (t == count) t = (t % 5 + 1);
+                int t = r.Next(1, 8 + 1);
+                if (t == count) t = (t % 8 + 1);
                 count = t;
 
                 for (int j = 0; j < cols; j++)
@@ -81,13 +137,7 @@ namespace NimGameProject.Forms
                     //quan trọng
                     if (game.Board[i,j] == 0)
                     {
-                        string path = "";
-
-                        if (count == 3) path = @"D:\Download\carrot.png";
-                        else if (count == 4) path = @"D:\Download\avocado.png";
-                        else if (count == 1) path = @"D:\Download\cherry.png";
-                        else if (count == 2) path = @"D:\Download\mango.png";
-                        else path = @"D:\Download\apple.png";
+                        string path = ImagePathRandom(count);
                         caro.Controls.Add(CreateItemButton(i, j, path));
                     }
 
@@ -96,13 +146,32 @@ namespace NimGameProject.Forms
             }
         }
 
+        public String ImagePathRandom(int count)
+        {
+            string path = "";
+            switch (count)
+            {
+                case 1: path = @"D:\Download\carrot.png"; break;
+                case 2: path = @"D:\Download\avocado.png"; break;
+                case 3: path = @"D:\Download\cherry.png"; break;
+                case 4: path = @"D:\Download\mango.png"; break;
+                case 5: path = @"D:\Download\mangosteen.png"; break;
+                case 6: path = @"D:\Download\watermelon.png"; break;
+                case 7: path = @"D:\Download\blueberry.png"; break;
+                default: path = @"D:\Download\apple.png"; break;
+            }
+            
+
+            return path;
+        }
+
 
         public Button CreateItemButton(int i, int j, string path)
         {
             Button item = new Button();
 
-            item.Size = new Size(38, 38);
-            item.Location = new Point(5, 5);
+            item.Size = new Size(itemSize, itemSize);
+            item.Location = new Point(5, 5); //(caroSize - itemSize)/2
 
 
             //item.Anchor = AnchorStyles.None;
@@ -128,6 +197,8 @@ namespace NimGameProject.Forms
 
         private void Item_Click(object sender, EventArgs e)
         {
+            if (!game.IsPVP && game.GameState.CurrentPlayer) return;
+
             Button item = sender as Button;
 
             Point point = (Point)item.Tag;
@@ -138,7 +209,7 @@ namespace NimGameProject.Forms
 
             if (game.ChosenItem(i, j, game.GameState.CurrentPlayer))
             {
-                RowSelectedEffect(i);
+                //RowSelectedEffect(i);
                 item.Visible = false;
             }
             else
@@ -151,32 +222,33 @@ namespace NimGameProject.Forms
             Button item = sender as Button;
 
             //selectItems.Play();
-            item.Size = new Size(46, 46);
-            item.Location = new Point(1, 1);
+            item.Size = new Size(caroSize, caroSize);
+            item.Location = new Point(0, 0);
         }
 
         private void Leave_Effect(object sender, EventArgs e)
         {
             Button item = sender as Button;
 
-            item.Size = new Size(38, 38);
+            item.Size = new Size(itemSize, itemSize);
             item.Location = new Point(5, 5);
         }
 
-        private void RowSelectedEffect(int row)
+        private void RowSelectedEffect()
         {
             foreach (Control c in panelBoard.Controls)
             {
                 Panel p = c as Panel;
                 Point position = (Point)p.Tag;
 
-                if (position.X == row)
+                if (position.X == game.ChosenPile)
                 {
-                    if (p.BackColor == Color.LightGoldenrodYellow)
+
+                    if ((position.X + position.Y) % 2 == 0)
                     {
                         p.BackColor = Color.PaleTurquoise;
                     }
-                    if (p.BackColor == Color.LightYellow)
+                    else
                     {
                         {
                             p.BackColor = Color.Honeydew;
@@ -186,9 +258,10 @@ namespace NimGameProject.Forms
             }
         }
 
-        private void ResetRowEffect(int row)
+        private void ResetRowEffect()
         {
-            MessageBox.Show("ủa");
+            int row = game.ChosenPile;
+
             foreach (Control c in panelBoard.Controls)
             {
                 Panel p = c as Panel;
@@ -196,11 +269,11 @@ namespace NimGameProject.Forms
 
                 if (position.X == row)
                 {
-                    if (p.BackColor == Color.PaleTurquoise)
+                    if ((position.X + position.Y) % 2 == 0)
                     {
                         p.BackColor = Color.LightGoldenrodYellow;
                     }
-                    if (p.BackColor == Color.Honeydew)
+                    else
                     {
                         {
                             p.BackColor = Color.LightYellow;
@@ -211,16 +284,14 @@ namespace NimGameProject.Forms
         }
 
         public void AdjustPlayerButton()
-        {
-            ResetRowEffect(game.ChosenPile);
-
+        { 
             if (!game.GameState.CurrentPlayer)
             {
                 buttonPlayer1.Enabled = true;
                 buttonPlayer2.Enabled = false;
 
                 buttonPlayer2.Margin = new Padding(10);
-                buttonPlayer2.BackgroundImage = Image.FromFile(@"D:\Download\cat_unable.png");
+                buttonPlayer2.BackgroundImage = Image.FromFile(player2UnableImagePath);
                 buttonPlayer1.Margin = new Padding(0);
                 buttonPlayer1.BackgroundImage = Image.FromFile(@"D:\Download\dog.png");
             }
@@ -231,21 +302,112 @@ namespace NimGameProject.Forms
 
                 buttonPlayer2.Margin = new Padding(0);
                 buttonPlayer1.Margin = new Padding(10);
-                buttonPlayer2.BackgroundImage = Image.FromFile(@"D:\Download\cat.png");
+                buttonPlayer2.BackgroundImage = Image.FromFile(player2EnableImagePath);
                 buttonPlayer1.BackgroundImage = Image.FromFile(@"D:\Download\dog_unable.png");
             }
         }
         private void buttonPlayer1_Click(object sender, EventArgs e)
         {
+            //ResetRowEffect();
             game.EndTurn();
             AdjustPlayerButton();
+
         }
 
         private void buttonPlayer2_Click(object sender, EventArgs e)
         {
+            if (!isPVP) return; //hông kích hoạt đối với chơi với máy
             game.EndTurn();
-            AdjustPlayerButton();
+            AdjustPlayerButton(); 
+            //ResetRowEffect();
         }
 
+
+        public async void ComputerMove()
+        {
+
+            var move = game.GetComputerMove();
+
+            RowSelectedEffect();
+
+            await AnimateComputerMove(move.piles, move.items);
+
+            game.ApplyMove(move.piles, move.items);
+
+            //ResetRowEffect(move.piles);
+        }
+
+        /// 
+        /// không bị delay
+        /// 
+        //public void AnimateComputerMove(int piles, int items)
+        //{
+        //    int remove = 0;
+
+        //    foreach(Control c in panelBoard.Controls)
+        //    {
+        //        Panel p = c as Panel;
+        //        Point position = (Point)p.Tag; //mỗi ô caro
+
+        //        if(position.X == piles)
+        //        {
+        //            foreach(Control btn in p.Controls)
+        //            {
+        //                if(btn is Button && btn.Visible)
+        //                {
+        //                    btn.Visible = false;
+
+        //                    remove++;
+        //                    if (remove == items) return;
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+
+        public async Task AnimateComputerMove(int pile, int items)
+        {
+            int remove = 0;
+
+            foreach (Control c in panelBoard.Controls)
+            {
+                Panel p = c as Panel;
+                Point position = (Point)p.Tag; //mỗi ô caro
+
+                if (position.X == pile)
+                {
+                    foreach (Control btn in p.Controls)
+                    {
+                        if (btn is Button && btn.Visible)
+                        {
+                            btn.Visible = false;
+
+                            await Task.Delay(200);
+
+                            remove++;
+                            if (remove == items) return;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            ExitToMenu.Invoke();
+        }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            ResetGame();
+        }
+
+        public void ResetGame()
+        {
+            game = new GameEngine(isPVP, true, new GameState(gameInit));
+
+            InitGame();
+
+        }
     }
 }

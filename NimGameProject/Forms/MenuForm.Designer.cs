@@ -40,6 +40,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.LemonChiffon;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
@@ -101,6 +102,7 @@
             this.buttonPVP.TabIndex = 1;
             this.buttonPVP.Text = "Chơi 2 Người";
             this.buttonPVP.UseVisualStyleBackColor = true;
+            this.buttonPVP.Click += new System.EventHandler(this.buttonPVP_Click);
             // 
             // buttonHistory
             // 

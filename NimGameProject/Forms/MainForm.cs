@@ -33,13 +33,26 @@ namespace NimGameProject.Forms
             panelMain.Controls.Clear();
             panelMain.Controls.Add(menu);
 
-            menu.ButtonPVEClicked += GameForm_Load; //gọi GameForm
+            menu.ButtonPVEClicked += GameFormPVE; //gọi GameForm sẽ cài đặt máy chơi
+            menu.ButtonPVPClicked += GameFormPVP; //gọi GameForm sẽ cài đặt 
+
 
             menu.Show();
         }
-        private void GameForm_Load()
+
+        private void GameFormPVP()
         {
-            GameForm game = new GameForm();
+            GameForm_Load(true);
+        }
+
+        private void GameFormPVE()
+        {
+            GameForm_Load(false);
+        }
+
+        private void GameForm_Load(bool isPVP)
+        {
+            GameForm game = new GameForm(isPVP);
 
             game.Dock = DockStyle.Fill;
             game.TopLevel = false;
