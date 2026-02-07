@@ -10,3 +10,4 @@ D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.pdb
 D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.Forms.MainForm.resources
 D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.Forms.GameForm.resources
 D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.Forms.MenuForm.resources
+D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.Forms.EndGameForm.resources

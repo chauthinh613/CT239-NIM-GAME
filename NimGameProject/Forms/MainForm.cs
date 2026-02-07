@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -62,8 +63,24 @@ namespace NimGameProject.Forms
             panelMain.BackColor = Color.LightYellow;
 
             game.ExitToMenu += MenuForm_Load;
+            game.ShowEndGameForm += (result) =>
+            {
+                EndGameForm_Load(result.isPVP, result.winnerPlayer);
+            };
 
             game.Show();
+        }
+
+        private void EndGameForm_Load(bool isPVP, bool winnerPlayer)
+        {
+            EndGameForm endForm = new EndGameForm(isPVP, winnerPlayer);
+            endForm.Dock = DockStyle.Fill;
+            endForm.TopLevel = false;
+
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(endForm);
+
+            endForm.Show();
         }
     }
 }

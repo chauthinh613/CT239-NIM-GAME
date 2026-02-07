@@ -17,6 +17,8 @@ namespace NimGameProject.Forms
 {
     public partial class GameForm : Form
     {
+        const int numberFruits = 9;
+
         string player2EnableImagePath;
         string player2UnableImagePath;
 
@@ -25,6 +27,7 @@ namespace NimGameProject.Forms
         GameState gameInit; //lưu trạng thái đầu tiên của game để có gì reset
 
         public event Action ExitToMenu;
+        public event Action<(bool isPVP, bool winnerPlayer)> ShowEndGameForm;
 
         private int caroSize;
         private int itemSize;
@@ -92,7 +95,8 @@ namespace NimGameProject.Forms
 
         public void GameOver()
         {
-            ExitToMenu?.Invoke();
+            //ExitToMenu?.Invoke();
+            ShowEndGameForm.Invoke((game.IsPVP, game.GameState.CurrentPlayer));
         }
 
         public void InitGameBoard()
@@ -119,8 +123,8 @@ namespace NimGameProject.Forms
             {
 
                 Random r = new Random();
-                int t = r.Next(1, 8 + 1);
-                if (t == count) t = (t % 8 + 1);
+                int t = r.Next(1, 10 + 1);
+                if (t == count) t = (t % 10 + 1);
                 count = t;
 
                 for (int j = 0; j < cols; j++)
@@ -158,6 +162,8 @@ namespace NimGameProject.Forms
                 case 5: path = @"D:\Download\mangosteen.png"; break;
                 case 6: path = @"D:\Download\watermelon.png"; break;
                 case 7: path = @"D:\Download\blueberry.png"; break;
+                case 8: path = @"D:\Download\guava.png"; break;
+                case 9: path = @"D:\Download\peach.png"; break;
                 default: path = @"D:\Download\apple.png"; break;
             }
             

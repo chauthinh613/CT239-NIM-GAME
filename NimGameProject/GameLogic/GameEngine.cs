@@ -288,16 +288,16 @@ namespace NimGameProject.GameLogic
 
         public void GameOver()
         {
-            string win = "";
+            //string win = "";
 
-            GameOverEvent?.Invoke();
+            GameOverEvent.Invoke();
 
-            if (!gameState.CurrentPlayer)
-                win = string.Format("Nguoi choi Cho thang");
-            else
-                win = string.Format("Nguoi choi Meo thang");
+            //if (!gameState.CurrentPlayer)
+            //    win = string.Format("Nguoi choi Cho thang");
+            //else
+            //    win = string.Format("Nguoi choi Meo thang");
 
-            MessageBox.Show(win);
+            //MessageBox.Show(win);
         }
 
         

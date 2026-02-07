@@ -54,7 +54,7 @@
             // panelMain
             // 
             this.panelMain.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelMain.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelMain.BackColor = System.Drawing.Color.Turquoise;
             this.panelMain.Location = new System.Drawing.Point(4, 4);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(594, 794);
@@ -65,13 +65,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(602, 803);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(620, 850);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NimFruits";
+            this.Text = "Nim Fruta";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

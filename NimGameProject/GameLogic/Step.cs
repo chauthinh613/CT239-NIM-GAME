@@ -8,18 +8,18 @@ namespace NimGameProject.GameLogic
 {
     internal class Step
     {
-        private int i, j; //vị trí chọn i = đống nào, j vị trí nào được ấn
+        private int row, col; //vị trí chọn i = đống nào, j vị trí nào được ấn
         private bool currentPlayer;
 
         public Step(int i, int j, bool currentPlayer)
         {
-            this.i = i;
-            this.j = j;
+            this.row = i;
+            this.col = j;
             this.currentPlayer = currentPlayer;
         }
 
-        public int I { get { return i; } }
-        public int J { get { return j; } }
+        public int Row { get { return row; } }
+        public int Col { get { return col; } }
         public bool CurrentPlayer { get { return currentPlayer; } }
     }
 }
