@@ -36,6 +36,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableLayoutPanel1.BackgroundImage")));
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 600F));
@@ -54,10 +55,10 @@
             // panelMain
             // 
             this.panelMain.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelMain.BackColor = System.Drawing.Color.Turquoise;
-            this.panelMain.Location = new System.Drawing.Point(4, 4);
+            this.panelMain.BackColor = System.Drawing.Color.Transparent;
+            this.panelMain.Location = new System.Drawing.Point(4, 6);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(594, 794);
+            this.panelMain.Size = new System.Drawing.Size(594, 790);
             this.panelMain.TabIndex = 0;
             // 
             // MainForm

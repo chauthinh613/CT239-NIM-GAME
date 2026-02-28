@@ -64,24 +64,31 @@ namespace NimGameProject.GameLogic
             this.piles = gameState.piles.ToArray();
         }
 
-        public GameState(bool currentPlayer, int[,] board)
+        public GameState(bool currentPlayer, int[][] board)
         {
             this.currentPlayer = currentPlayer;
             this.isGameOver = false;
 
-            this.pilesCount = board.GetLength(0);
+            this.pilesCount = board.Length;
+            this.piles = new int[pilesCount];
 
-            for(int i = 0; i < board.GetLength(0); i++) //khởi tạo = 0
+            for(int i = 0; i < board.Length; i++) //khởi tạo = 0
             {
                 this.piles[i] = 0;
             }
 
-            for(int i = 0; i <  board.GetLength(0); i++)
+            for(int i = 0; i <  board.Length; i++)
             {
-                for(int j = 0; j < board.GetLength(1); j++)
+                for(int j = 0; j < board[i].Length; j++)
                 {
-                    if (board[i, j] == 0) this.piles[i]++;
+                    if (board[i][j] == 0) this.piles[i]++;
                 }
+            }
+
+            //xử lý bug vụ nếu lỡ bị lỗi board rỗng
+            if(pilesCount == 0)
+            {
+                this.isGameOver = true;
             }
         }
 
@@ -111,25 +118,47 @@ namespace NimGameProject.GameLogic
             }
             return max;
         }
-        public int[,] GetStateBoard()
+        public int[][] GetStateBoard()
         {
             int max = this.GetMaxInPiles();
 
 
-            int[,] board = new int[this.pilesCount, max];
+            int[][] board = new int[this.pilesCount][];
+
+            for(int i =  0; i < this.pilesCount; i++)
+            {
+                board[i] = new int[max];
+            }
+
             for (int i = 0; i < pilesCount; i++)
             {
                 for (int j = 0; j < piles[i]; j++)
                 {
-                    board[i, j] = 0;
+                    board[i][j] = 0;
                 }
                 for (int j = piles[i]; j < max; j++)
                 {
-                    board[i, j] = -1;
+                    board[i][j] = -1;
                 }
             }
 
             return board;
+        }
+
+        //tính lại số đống và số lượng mỗi đống còn lại từ board (sử dụng khi load game)
+        public void RecalculatePiles(int[][] board)
+        {
+            this.pilesCount = board.Length;
+
+            for (int i = 0; i < board.Length; i++)
+            {
+                int count = 0;
+                for (int j = 0; j < board[i].Length; j++)
+                {
+                    if (board[i][j] == 0) count++;
+                }
+                piles[i] = count;
+            }
         }
 
         public GameState CloneGameState()

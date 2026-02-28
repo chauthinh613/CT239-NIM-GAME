@@ -12,6 +12,9 @@ namespace NimGameProject.Forms
 {
     public partial class EndGameForm : Form
     {
+        public event Action ExitToMenu;
+        public event Action RestartGame;
+
         public EndGameForm()
         {
             InitializeComponent();
@@ -20,6 +23,8 @@ namespace NimGameProject.Forms
         public EndGameForm(bool isPVP, bool winnerPlayer)
         {
             InitializeComponent();
+
+            pictureWinner.SizeMode = PictureBoxSizeMode.Zoom;
 
             if (isPVP)
             {
@@ -47,7 +52,12 @@ namespace NimGameProject.Forms
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
+            ExitToMenu.Invoke();
+        }
 
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            RestartGame.Invoke();
         }
     }
 }

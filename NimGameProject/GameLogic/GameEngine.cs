@@ -22,7 +22,7 @@ namespace NimGameProject.GameLogic
         private const int MIN_ROW = 1;
         private const int MIN_COL = 1;
 
-        private int[,] board; //tạo bàn theo ô 
+        private int[][] board; //tạo bàn theo ô 
         //-1: không có item
         //0: item chưa được chọn
         //1: item đã được chọn
@@ -72,6 +72,21 @@ namespace NimGameProject.GameLogic
             board = gameState.GetStateBoard();
 
         }
+
+        public GameEngine(bool isPVP, GameConfig config)
+        {
+            gameState = new GameState(config.Rows, 1, config.MaxColumns);
+
+            historySteps = new Stack<Step>();
+
+            chosenPile = 0;
+            chosenItems = 0;
+
+            this.isPVP = isPVP;
+            this.isEasyMode = true;
+
+            board = gameState.GetStateBoard();
+        }
         
 
         
@@ -93,11 +108,11 @@ namespace NimGameProject.GameLogic
 
                 //chosenItems++;
 
-                board[i, j] = 1;
+                board[i][j] = 1;
 
                 historySteps.Push(CreateStep(i, j, currentPlayer));
 
-                ChosenPileEvent?.Invoke();
+                ChosenPileEvent.Invoke();
 
                 if(gameState.Piles[chosenPile] == 0) //nếu lấy hết thì tự đổi lượt
                 {
@@ -166,14 +181,13 @@ namespace NimGameProject.GameLogic
 
 
         //xử lý máy chơi
-
         public void ApplyMove(int pile, int items)
         {
             chosenPile = pile;
 
             inTurnCheck = true;
 
-            for(int i = 0; i < items; i++)
+            for(int i = 0; i < items; i++) //kiểm tra để chỉ lấy những ô còn item
             {
                 RemoveItems(pile, 1);
                 UpdateBoard();
@@ -188,15 +202,15 @@ namespace NimGameProject.GameLogic
         {
             int j = 0;
 
-            while (j < board.GetLength(1) && board[chosenPile, j] != 0)
+            while (j < board[chosenPile].Length && board[chosenPile][j] != 0)
             {
                 j++;
             }
 
-            if (j >= board.GetLength(1))
+            if (j >= board[chosenPile].Length)
                 return;
 
-            board[chosenPile, j] = 1;
+            board[chosenPile][j] = 1;
         }
 
 
@@ -278,31 +292,25 @@ namespace NimGameProject.GameLogic
 
         public bool CheckGameOver()
         {
+            //lỡ nếu xong mà chưa load kịp
+            if(gameState.IsGameOver) return true;
+
             //duyệt từng đống
             for (int i = 0; i < gameState.PilesCount; i++)
             {
-                if (gameState.Piles[i] > 0) return false;
+                if (gameState.Piles[i] > 0 && gameState.Piles != null) return false;
             }
             return true;
         }
 
         public void GameOver()
         {
-            //string win = "";
-
             GameOverEvent.Invoke();
-
-            //if (!gameState.CurrentPlayer)
-            //    win = string.Format("Nguoi choi Cho thang");
-            //else
-            //    win = string.Format("Nguoi choi Meo thang");
-
-            //MessageBox.Show(win);
         }
 
         
 
-        public int[,] Board
+        public int[][] Board
         {
             get { return board; }
         }
@@ -310,15 +318,15 @@ namespace NimGameProject.GameLogic
         public GameState GameState { get { return gameState; } }
         public int ChosenPile {  get { return chosenPile; } set { chosenPile = value; } }
 
-        ///test///
+        ///---test---///
         public void MessageBoard()
         {
             string t = "";
-            for (int i = 0; i < board.GetLength(0); i++) 
+            for (int i = 0; i < board.Length; i++) 
             {
-                for(int j = 0; j < board.GetLength(1); j++)
+                for(int j = 0; j < board[i].Length; j++)
                 {
-                    t += string.Format("{0}, ", board[i, j]);
+                    t += string.Format("{0}, ", board[i][j]);
                 }
                 t += "\n\r";
             }
