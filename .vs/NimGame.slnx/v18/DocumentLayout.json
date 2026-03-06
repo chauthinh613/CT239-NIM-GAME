@@ -3,35 +3,67 @@
   "WorkspaceRootPath": "D:\\File\\VisualStudioProject\\NimGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|d:\\file\\visualstudioproject\\nimgame\\nimgameproject\\forms\\historyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\historyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|d:\\file\\visualstudioproject\\nimgame\\nimgameproject\\forms\\settingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\settingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|d:\\file\\visualstudioproject\\nimgame\\nimgameproject\\forms\\historyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\historyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\forms\\settingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\settingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\gamelogic\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\gamelogic\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|d:\\file\\visualstudioproject\\nimgame\\nimgameproject\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C94029DF-A4A7-5643-65F5-42B9A1786983}|CT239{C94029DF-A4A7-5643-65F5-42B9A1786983}|NimGameProject||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\gamelogic\\gameconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\gamelogic\\gameconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\forms\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\forms\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\gamelogic\\savedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\gamelogic\\savedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\gamelogic\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\gamelogic\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\forms\\historyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\historyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C94029DF-A4A7-5643-65F5-42B9A1786983}|CT239{C94029DF-A4A7-5643-65F5-42B9A1786983}|NimGameProject||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\forms\\endgameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\endgameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\forms\\endgameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\endgameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\forms\\gameform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\gameform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\gamelogic\\effect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\gamelogic\\effect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\gamelogic\\gameengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,40 +74,8 @@
       "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\gamelogic\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\forms\\endgameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\endgameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\forms\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\forms\\settingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\settingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|d:\\file\\visualstudioproject\\nimgame\\nimgameproject\\gamelogic\\savedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\gamelogic\\savedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\gamelogic\\gameconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\gamelogic\\gameconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\forms\\gameform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\gameform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\forms\\endgameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|solutionrelative:nimgameproject\\forms\\endgameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{78F1B595-3A10-4FA9-9476-EC859FF69BE7}|TestGUIForm\\TestGUIForm.csproj|d:\\file\\visualstudioproject\\nimgame\\testguiform\\testguiform.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{78F1B595-3A10-4FA9-9476-EC859FF69BE7}|TestGUIForm\\TestGUIForm.csproj|solutionrelative:testguiform\\testguiform.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}|NimGameProject\\NimGameProject.csproj|D:\\File\\VisualStudioProject\\NimGame\\nimgameproject\\gamelogic\\step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -93,11 +93,82 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MenuForm.cs [Design]",
+              "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\MenuForm.cs",
+              "RelativeDocumentMoniker": "NimGameProject\\Forms\\MenuForm.cs",
+              "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\MenuForm.cs [Design]",
+              "RelativeToolTip": "NimGameProject\\Forms\\MenuForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T16:45:34.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SettingForm.cs",
+              "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\SettingForm.cs",
+              "RelativeDocumentMoniker": "NimGameProject\\Forms\\SettingForm.cs",
+              "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\SettingForm.cs",
+              "RelativeToolTip": "NimGameProject\\Forms\\SettingForm.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAADwvx4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T16:42:53.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SettingForm.cs [Design]",
+              "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\SettingForm.cs",
+              "RelativeDocumentMoniker": "NimGameProject\\Forms\\SettingForm.cs",
+              "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\SettingForm.cs [Design]",
+              "RelativeToolTip": "NimGameProject\\Forms\\SettingForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T16:40:47.055Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Effect.cs",
+              "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\GameLogic\\Effect.cs",
+              "RelativeDocumentMoniker": "NimGameProject\\GameLogic\\Effect.cs",
+              "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\GameLogic\\Effect.cs",
+              "RelativeToolTip": "NimGameProject\\GameLogic\\Effect.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T04:32:58.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HistoryForm.cs",
+              "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\HistoryForm.cs",
+              "RelativeDocumentMoniker": "NimGameProject\\Forms\\HistoryForm.cs",
+              "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\HistoryForm.cs",
+              "RelativeToolTip": "NimGameProject\\Forms\\HistoryForm.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAqwF4AAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T13:32:43.735Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "GameConfig.cs",
+              "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\GameLogic\\GameConfig.cs",
+              "RelativeDocumentMoniker": "NimGameProject\\GameLogic\\GameConfig.cs",
+              "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\GameLogic\\GameConfig.cs",
+              "RelativeToolTip": "NimGameProject\\GameLogic\\GameConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T16:12:24.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "NimGameProject",
               "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\NimGameProject.csproj",
               "RelativeDocumentMoniker": "NimGameProject\\NimGameProject.csproj",
@@ -109,44 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MenuForm.cs [Design]",
-              "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\MenuForm.cs",
-              "RelativeDocumentMoniker": "NimGameProject\\Forms\\MenuForm.cs",
-              "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\MenuForm.cs [Design]",
-              "RelativeToolTip": "NimGameProject\\Forms\\MenuForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T13:50:36.333Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HistoryForm.cs",
-              "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\HistoryForm.cs",
-              "RelativeDocumentMoniker": "NimGameProject\\Forms\\HistoryForm.cs",
-              "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\HistoryForm.cs",
-              "RelativeToolTip": "NimGameProject\\Forms\\HistoryForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T13:32:43.735Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HistoryForm.cs [Design]",
-              "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\HistoryForm.cs",
-              "RelativeDocumentMoniker": "NimGameProject\\Forms\\HistoryForm.cs",
-              "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\HistoryForm.cs [Design]",
-              "RelativeToolTip": "NimGameProject\\Forms\\HistoryForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T12:18:01.72Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "SaveManager.cs",
               "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\GameLogic\\SaveManager.cs",
               "RelativeDocumentMoniker": "NimGameProject\\GameLogic\\SaveManager.cs",
@@ -154,12 +188,11 @@
               "RelativeToolTip": "NimGameProject\\GameLogic\\SaveManager.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAAAEQAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T06:01:12.374Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-28T06:01:12.374Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 8,
               "Title": "SaveData.cs",
               "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\GameLogic\\SaveData.cs",
               "RelativeDocumentMoniker": "NimGameProject\\GameLogic\\SaveData.cs",
@@ -167,82 +200,53 @@
               "RelativeToolTip": "NimGameProject\\GameLogic\\SaveData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T05:23:51.171Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-28T05:23:51.171Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "SettingForm.cs [Design]",
-              "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\SettingForm.cs",
-              "RelativeDocumentMoniker": "NimGameProject\\Forms\\SettingForm.cs",
-              "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\SettingForm.cs [Design]",
-              "RelativeToolTip": "NimGameProject\\Forms\\SettingForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T16:20:31.997Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "GameForm.cs",
               "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\GameForm.cs",
               "RelativeDocumentMoniker": "NimGameProject\\Forms\\GameForm.cs",
               "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\GameForm.cs",
               "RelativeToolTip": "NimGameProject\\Forms\\GameForm.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAuwEoAAABIAAAAAAAAAA==",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAC4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T07:37:04.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-24T07:37:04.828Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "GameConfig.cs",
-              "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\GameLogic\\GameConfig.cs",
-              "RelativeDocumentMoniker": "NimGameProject\\GameLogic\\GameConfig.cs",
-              "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\GameLogic\\GameConfig.cs",
-              "RelativeToolTip": "NimGameProject\\GameLogic\\GameConfig.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAIA9wBQAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-21T16:12:24.934Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 6,
               "Title": "GameForm.cs [Design]",
               "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\GameForm.cs",
               "RelativeDocumentMoniker": "NimGameProject\\Forms\\GameForm.cs",
               "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\GameForm.cs [Design]",
               "RelativeToolTip": "NimGameProject\\Forms\\GameForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-21T16:06:40.935Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-02-21T16:06:40.935Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 12,
               "Title": "EndGameForm.cs",
               "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\EndGameForm.cs",
               "RelativeDocumentMoniker": "NimGameProject\\Forms\\EndGameForm.cs",
               "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\EndGameForm.cs",
               "RelativeToolTip": "NimGameProject\\Forms\\EndGameForm.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAYwA8AAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAowDQAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-07T08:20:29.359Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-07T08:20:29.359Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "EndGameForm.cs [Design]",
               "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\EndGameForm.cs",
               "RelativeDocumentMoniker": "NimGameProject\\Forms\\EndGameForm.cs",
               "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\EndGameForm.cs [Design]",
               "RelativeToolTip": "NimGameProject\\Forms\\EndGameForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-07T08:09:57.081Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-02-07T08:09:57.081Z"
             },
             {
               "$type": "Document",
@@ -258,19 +262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "TestGUIForm.csproj",
-              "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\TestGUIForm\\TestGUIForm.csproj",
-              "RelativeDocumentMoniker": "TestGUIForm\\TestGUIForm.csproj",
-              "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\TestGUIForm\\TestGUIForm.csproj",
-              "RelativeToolTip": "TestGUIForm\\TestGUIForm.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-02T06:37:58.424Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 14,
               "Title": "GameForm.Designer.cs",
               "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\GameForm.Designer.cs",
               "RelativeDocumentMoniker": "NimGameProject\\Forms\\GameForm.Designer.cs",
@@ -278,50 +270,46 @@
               "RelativeToolTip": "NimGameProject\\Forms\\GameForm.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T11:11:29.812Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T11:11:29.812Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "MenuForm.cs",
               "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\MenuForm.cs",
               "RelativeDocumentMoniker": "NimGameProject\\Forms\\MenuForm.cs",
               "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\MenuForm.cs",
               "RelativeToolTip": "NimGameProject\\Forms\\MenuForm.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAmwDQAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAgwBEAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T10:45:49.493Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T10:45:49.493Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "MainForm.cs",
               "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\MainForm.cs",
               "RelativeDocumentMoniker": "NimGameProject\\Forms\\MainForm.cs",
               "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\MainForm.cs",
               "RelativeToolTip": "NimGameProject\\Forms\\MainForm.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAIwGsAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAcwBIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T15:28:47.621Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-31T15:28:47.621Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\MainForm.cs",
               "RelativeDocumentMoniker": "NimGameProject\\Forms\\MainForm.cs",
               "ToolTip": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\Forms\\MainForm.cs [Design]",
               "RelativeToolTip": "NimGameProject\\Forms\\MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T15:28:39.012Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-01-31T15:28:39.012Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 16,
               "Title": "GameEngine.cs",
               "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\GameLogic\\GameEngine.cs",
               "RelativeDocumentMoniker": "NimGameProject\\GameLogic\\GameEngine.cs",
@@ -329,12 +317,11 @@
               "RelativeToolTip": "NimGameProject\\GameLogic\\GameEngine.cs",
               "ViewState": "AgIAABsBAAAAAAAAAAASwCcBAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T14:57:22.996Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-31T14:57:22.996Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "GameState.cs",
               "DocumentMoniker": "D:\\File\\VisualStudioProject\\NimGame\\NimGameProject\\GameLogic\\GameState.cs",
               "RelativeDocumentMoniker": "NimGameProject\\GameLogic\\GameState.cs",
@@ -342,8 +329,7 @@
               "RelativeToolTip": "NimGameProject\\GameLogic\\GameState.cs",
               "ViewState": "AgIAAEYAAAAAAAAAAAAswFoAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T11:44:40.619Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-31T11:44:40.619Z"
             }
           ]
         }

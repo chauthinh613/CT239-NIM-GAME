@@ -56,6 +56,9 @@ namespace NimGameProject.Forms
                     continue; // nếu có file nào lỗi định dạng thì kệ 
                 }
             }
+
+            //thêm hiệu ứng cho home
+            Effect.ApplyButtonHoverEffect(buttonHome, Effect.ButtonType.home);
         }
 
         private Button createHistoryButton(string path, bool isPvP)
@@ -76,6 +79,8 @@ namespace NimGameProject.Forms
             button.Tag = path;
 
             button.Click += HistoryButton_Click;
+
+            Effect.ApplyTextboxHoverEffect(button);
 
             return button;
         }

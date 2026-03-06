@@ -104,6 +104,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameLogic\Effect.cs" />
     <Compile Include="Forms\ChooseLevelForm.cs">
       <SubType>Form</SubType>
     </Compile>

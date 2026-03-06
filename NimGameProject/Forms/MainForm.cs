@@ -32,7 +32,7 @@ namespace NimGameProject.Forms
             {
                 CreateParams cp = base.CreateParams;
                 // WS_EX_COMPOSITED, vẽ các control con trong một bộ đệm duy nhất
-                cp.ExStyle |= 0x02000000; 
+                cp.ExStyle |= 0x02000000;
                 return cp;
             }
         }
@@ -56,6 +56,7 @@ namespace NimGameProject.Forms
             menu.ButtonPVEClicked += GameFormPVE; //gọi GameForm sẽ cài đặt máy chơi
             menu.ButtonPVPClicked += GameFormPVP; //gọi GameForm sẽ cài đặt 
             menu.ButtonHistoryClicked += HistoryForm_Load; //gọi HistoryForm sẽ cài đặt lịch sử chơi
+            menu.ButtonSettingClicked += SettingForm_Load; //gọi SettingForm sẽ cài đặt cấu hình chơi
 
             menu.Show();
         }
@@ -148,10 +149,22 @@ namespace NimGameProject.Forms
                 endForm.RestartGame += GameFormPVE;
             }
 
-                panelMain.Controls.Clear();
+            panelMain.Controls.Clear();
             panelMain.Controls.Add(endForm);
 
             endForm.Show();
+        }
+
+        private void SettingForm_Load()
+        {
+            SettingForm setting = new SettingForm();
+            setting.Dock = DockStyle.Fill;
+            setting.TopLevel = false;
+
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(setting);
+
+            setting.Show();
         }
     }
 }

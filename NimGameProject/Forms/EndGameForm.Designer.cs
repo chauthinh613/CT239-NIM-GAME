@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EndGameForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureWinner = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonHome = new System.Windows.Forms.Button();
             this.buttonRestart = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureWinner = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureWinner)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -67,6 +67,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 800);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // pictureWinner
+            // 
+            this.pictureWinner.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureWinner.BackColor = System.Drawing.Color.Transparent;
+            this.pictureWinner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureWinner.Location = new System.Drawing.Point(210, 222);
+            this.pictureWinner.Name = "pictureWinner";
+            this.pictureWinner.Size = new System.Drawing.Size(180, 180);
+            this.pictureWinner.TabIndex = 0;
+            this.pictureWinner.TabStop = false;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
@@ -80,7 +91,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 94F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(294, 94);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
@@ -89,6 +100,7 @@
             this.buttonHome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonHome.BackgroundImage")));
             this.buttonHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonHome.FlatAppearance.BorderSize = 0;
             this.buttonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHome.Location = new System.Drawing.Point(33, 7);
@@ -103,6 +115,7 @@
             this.buttonRestart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonRestart.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRestart.BackgroundImage")));
             this.buttonRestart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonRestart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRestart.FlatAppearance.BorderSize = 0;
             this.buttonRestart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRestart.Location = new System.Drawing.Point(180, 7);
@@ -125,17 +138,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "WINNER!";
             // 
-            // pictureWinner
-            // 
-            this.pictureWinner.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureWinner.BackColor = System.Drawing.Color.Transparent;
-            this.pictureWinner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureWinner.Location = new System.Drawing.Point(210, 222);
-            this.pictureWinner.Name = "pictureWinner";
-            this.pictureWinner.Size = new System.Drawing.Size(180, 180);
-            this.pictureWinner.TabIndex = 0;
-            this.pictureWinner.TabStop = false;
-            // 
             // EndGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -148,8 +150,8 @@
             this.Text = "EndGameForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureWinner)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

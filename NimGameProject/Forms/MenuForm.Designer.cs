@@ -156,6 +156,7 @@
             this.buttonSetting.TabStop = false;
             this.buttonSetting.Text = "Cài Đặt";
             this.buttonSetting.UseVisualStyleBackColor = true;
+            this.buttonSetting.Click += new System.EventHandler(this.buttonSetting_Click);
             // 
             // pictureBox1
             // 

@@ -15,14 +15,15 @@ namespace NimGameProject.Forms
         public event Action ButtonPVEClicked;
         public event Action ButtonPVPClicked;
         public event Action ButtonHistoryClicked;
+        public event Action ButtonSettingClicked;
         public MenuForm()
         {
             InitializeComponent();
 
-            ApplyHoverEffect(buttonPVE);
-            ApplyHoverEffect(buttonPVP);
-            ApplyHoverEffect(buttonHistory);
-            ApplyHoverEffect(buttonSetting);
+            Effect.ApplyTextboxHoverEffect(buttonPVE);
+            Effect.ApplyTextboxHoverEffect(buttonPVP);
+            Effect.ApplyTextboxHoverEffect(buttonHistory);
+            Effect.ApplyTextboxHoverEffect(buttonSetting);
         }
 
         private void buttonPVE_Click(object sender, EventArgs e)
@@ -40,30 +41,9 @@ namespace NimGameProject.Forms
             ButtonHistoryClicked.Invoke();
         }
 
-        //thêm hiệu ứng hover cho button
-        private void ApplyHoverEffect(Button button)
+        private void buttonSetting_Click(object sender, EventArgs e)
         {
-            button.BackgroundImage = Properties.Resources.textbox_background;
-            button.BackgroundImageLayout = ImageLayout.Zoom;
-            button.FlatStyle = FlatStyle.Flat;
-            button.FlatAppearance.BorderSize = 0;
-
-            //hông bị nền xám xám của cái mặc định
-            button.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            //button.UseVisualStyleBackColor = false;
-
-            button.MouseEnter += (s, e) =>
-            {
-                button.BackgroundImage = Properties.Resources.textbox_background_hover;
-                button.ForeColor = Color.SandyBrown;
-            };
-
-            button.MouseLeave += (s, e) =>
-            {
-                button.BackgroundImage = Properties.Resources.textbox_background;
-                button.ForeColor = Color.SaddleBrown;
-            };
+            ButtonSettingClicked.Invoke();
         }
     }
 }

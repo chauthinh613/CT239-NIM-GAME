@@ -48,6 +48,9 @@ namespace NimGameProject.Forms
                     pictureWinner.Image = Image.FromFile(@"D:\Download\computer.png");
                 }
             }
+
+            Effect.ApplyButtonHoverEffect(buttonHome, Effect.ButtonType.home);
+            Effect.ApplyButtonHoverEffect(buttonRestart, Effect.ButtonType.restart);
         }
 
         private void buttonHome_Click(object sender, EventArgs e)

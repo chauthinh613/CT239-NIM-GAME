@@ -92,6 +92,7 @@
             this.buttonHome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonHome.BackgroundImage")));
             this.buttonHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonHome.FlatAppearance.BorderSize = 0;
             this.buttonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHome.Location = new System.Drawing.Point(185, 11);

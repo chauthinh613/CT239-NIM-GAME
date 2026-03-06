@@ -46,7 +46,6 @@ namespace NimGameProject.Forms
             InitializeComponent();
         }
 
-
         public GameForm(bool isPVP, GameConfig config)
         {
             InitializeComponent();
@@ -121,6 +120,10 @@ namespace NimGameProject.Forms
         private void GameForm_Load(object sender, EventArgs e)
         {
             InitGame();
+
+            Effect.ApplyButtonHoverEffect(buttonHome, Effect.ButtonType.home);
+            Effect.ApplyButtonHoverEffect(buttonReset, Effect.ButtonType.restart);
+            //Effect.ApplyButtonHoverEffect(buttonSave, "save");
         }
 
         public void AdjustSize(int pilesCount, int max) //chỉnh kích thước nếu ít thì cho bự, nhiều thì cho nhỏ lại
