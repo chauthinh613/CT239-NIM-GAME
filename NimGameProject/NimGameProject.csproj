@@ -104,13 +104,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameLogic\Effect.cs" />
-    <Compile Include="Forms\ChooseLevelForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ChooseLevelForm.Designer.cs">
-      <DependentUpon>ChooseLevelForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Engine\Effect.cs" />
     <Compile Include="Forms\EndGameForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,12 +141,12 @@
     <Compile Include="Forms\SettingForm.Designer.cs">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameLogic\GameConfig.cs" />
-    <Compile Include="GameLogic\GameEngine.cs" />
-    <Compile Include="GameLogic\GameState.cs" />
-    <Compile Include="GameLogic\SaveData.cs" />
-    <Compile Include="GameLogic\SaveManager.cs" />
-    <Compile Include="GameLogic\Step.cs" />
+    <Compile Include="Engine\GameConfig.cs" />
+    <Compile Include="Engine\GameEngine.cs" />
+    <Compile Include="Engine\GameState.cs" />
+    <Compile Include="Engine\SaveData.cs" />
+    <Compile Include="Engine\SaveManager.cs" />
+    <Compile Include="Engine\Step.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\EndGameForm.resx">

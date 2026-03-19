@@ -17,11 +17,6 @@ namespace NimGameProject.GameLogic
         public event Action ComputerMoveEvent;
         public event Action ResetRowEffectEvent;
 
-        private const int MAX_ROW = 10; //số đống tối đa là 10
-        private const int MAX_COL = 10; //số vật phẩm tối đa là 10
-        private const int MIN_ROW = 1;
-        private const int MIN_COL = 1;
-
         private int[][] board; //tạo bàn theo ô 
         //-1: không có item
         //0: item chưa được chọn
@@ -36,10 +31,13 @@ namespace NimGameProject.GameLogic
         private Stack<Step> historySteps; //lưu stack các nước đi
 
         private bool inTurnCheck; //kiểm tra lượt chơi người đó còn hay không
+        public bool InTurnCheck { get { return inTurnCheck; } set { inTurnCheck = value; } }
+
         private int chosenPile; // chỉ số đống
         private int chosenItems;
 
         private Random random;
+
 
         public GameEngine()
         {
@@ -128,8 +126,37 @@ namespace NimGameProject.GameLogic
             return step;
         }
 
-        //hàm ValidationCheck: kiểm tra giá trị nhập có hợp lệ hay không
-        
+        public bool UndoInTurn()
+        {
+            if (historySteps.Count == 0 || !inTurnCheck) return false; //rỗng thì hông undo được
+
+            Step lastStep = historySteps.Pop();
+
+            if (lastStep.CurrentPlayer != gameState.CurrentPlayer) return false; //nếu lượt hông phải thì hông undo được
+            
+            // hoàn lại item trên board
+            board[lastStep.Row][lastStep.Col] = 0;
+
+            // hoàn lại số lượng pile
+            gameState.Piles[lastStep.Row] += 1;
+
+            // nếu stack rỗng sau khi undo thì reset lượt, để 
+            if (historySteps.Count == 0)
+            {
+                inTurnCheck = false;
+                chosenPile = 0;
+            }
+
+            return true;
+        }
+
+        public bool CanUndo() // kiểm tra có thể undo hông
+        {
+            return historySteps.Count > 0 && inTurnCheck;
+        }
+
+        //hàm ValidationCheck: kiểm tra giá trị nhập có hợp lệ hay không -> viết ở dưới
+
         public bool CheckSamePile(int pile)
         {
             if (pile == this.chosenPile) return true;
@@ -167,6 +194,7 @@ namespace NimGameProject.GameLogic
                         //EndTurn();
                     }
 
+                    historySteps.Clear();
                 }
                 else GameOver();
             }
@@ -225,7 +253,7 @@ namespace NimGameProject.GameLogic
             }
             else
             {
-                MakeRandomMove(); //nếu không thì đi ngẫu nhiên
+                MakeRandomMove(); //nếu hông thì đi random
             }
 
             return (chosenPile, chosenItems);
@@ -265,9 +293,9 @@ namespace NimGameProject.GameLogic
         }
         public void MakeRandomMove()
         {
+            random = new Random();
             do
             {
-                random = new Random();
                 chosenPile = random.Next(1, gameState.PilesCount + 1) - 1;
                 chosenItems = random.Next(1, gameState.Piles[chosenPile] + 1);
             } while (!ValidationCheck());
@@ -276,12 +304,12 @@ namespace NimGameProject.GameLogic
         {
             if (chosenPile < 0 || chosenPile > gameState.PilesCount)
             {
-                MessageBox.Show("1");
+                MessageBox.Show("Lỗi");
                 return false;
             }
             if (gameState.Piles[chosenPile] < 0)
             {
-                MessageBox.Show("2");
+                MessageBox.Show("Lỗi");
                 return false;
             }
             if (chosenItems <= 0 || chosenItems > gameState.Piles[chosenPile]) { return false; }

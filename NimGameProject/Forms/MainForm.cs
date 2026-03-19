@@ -14,12 +14,11 @@ namespace NimGameProject.Forms
 {
     public partial class MainForm : Form
     {
-        GameConfig config = new GameConfig();
+        GameConfig config;
         public MainForm()
         {
             InitializeComponent();
-
-
+            config = new GameConfig();
         }
 
 
@@ -157,14 +156,22 @@ namespace NimGameProject.Forms
 
         private void SettingForm_Load()
         {
-            SettingForm setting = new SettingForm();
+            SettingForm setting = new SettingForm(config);
             setting.Dock = DockStyle.Fill;
             setting.TopLevel = false;
+
+            setting.ExitToMenu += MenuForm_Load_Config;
 
             panelMain.Controls.Clear();
             panelMain.Controls.Add(setting);
 
             setting.Show();
+        }
+
+        private void MenuForm_Load_Config(GameConfig config)
+        {
+            MenuForm_Load();
+            this.config = config;
         }
     }
 }

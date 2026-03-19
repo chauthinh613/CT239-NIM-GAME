@@ -1,4 +1,5 @@
 ﻿using NimGameProject.GameLogic;
+using NimGameProject.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,8 +22,8 @@ namespace NimGameProject.Forms
     {
         const int numberFruits = 9;
 
-        string player2EnableImagePath;
-        string player2UnableImagePath;
+        Image player2EnableImage;
+        Image player2UnableImage;
 
         GameEngine game;
 
@@ -41,6 +42,8 @@ namespace NimGameProject.Forms
 
         SaveManager saveManager = new SaveManager();
 
+        private bool isChange; //có thay đổi mới hiển thị thông báo lưu game
+
         public GameForm()
         {
             InitializeComponent();
@@ -52,14 +55,11 @@ namespace NimGameProject.Forms
             this.isPVP = isPVP;
 
             InitState(config);
-        }
-        public GameForm(bool isPVP)
-        {
-            InitializeComponent();
-            this.isPVP = isPVP;
+
+            isChange = false;
         }
 
-        public GameForm(SaveData data, string path)
+        public GameForm(SaveData data, string path) //khỏi tạo từ game đã lưu
         {
             InitializeComponent();
 
@@ -73,16 +73,7 @@ namespace NimGameProject.Forms
 
             /// nhớ check gameover (bị bug nếu máy đang lấy mà lưu game ///
 
-            if (isPVP)
-            {
-                player2EnableImagePath = @"D:\Download\cat.png";
-                player2UnableImagePath = @"D:\Download\cat_unable.png";
-            }
-            else
-            {
-                player2EnableImagePath = @"D:\Download\computer.png";
-                player2UnableImagePath = @"D:\Download\computer_unable.png";
-            }
+            isChange = false;
         }
 
         private void InitState(GameConfig config)
@@ -90,19 +81,6 @@ namespace NimGameProject.Forms
             game = new GameEngine(isPVP, config);
 
             gameInit = game.GameState.CloneGameState(); //lưu trạng thái đầu tiên của game để có gì reset
-
-
-            if (isPVP)
-            {
-                player2EnableImagePath = @"D:\Download\cat.png";
-                player2UnableImagePath = @"D:\Download\cat_unable.png";
-            }
-            else
-            {
-                player2EnableImagePath = @"D:\Download\computer.png";
-                player2UnableImagePath = @"D:\Download\computer_unable.png";
-            }
-
         }
 
         private void InitGame()
@@ -115,6 +93,17 @@ namespace NimGameProject.Forms
             game.ComputerMoveEvent += ComputerMove;
             game.ResetRowEffectEvent += ResetRowEffect;
 
+            if (isPVP)
+            {
+                player2EnableImage = Resources.player_cat;
+                player2UnableImage = Resources.player_cat_unable;
+            }
+            else
+            {
+                player2EnableImage = Resources.player_computer;
+                player2UnableImage = Resources.player_computer_unable;
+            }
+
             InitGameBoard();
         }
         private void GameForm_Load(object sender, EventArgs e)
@@ -123,6 +112,8 @@ namespace NimGameProject.Forms
 
             Effect.ApplyButtonHoverEffect(buttonHome, Effect.ButtonType.home);
             Effect.ApplyButtonHoverEffect(buttonReset, Effect.ButtonType.restart);
+            Effect.ApplyButtonHoverEffect(buttonHelp, Effect.ButtonType.help);
+            Effect.ApplyButtonHoverEffect(buttonUndo, Effect.ButtonType.undo);
             //Effect.ApplyButtonHoverEffect(buttonSave, "save");
         }
 
@@ -169,16 +160,13 @@ namespace NimGameProject.Forms
             panelBoard.Size = new Size(cols * caroSize, rows * caroSize);
             //panelBoard.BorderStyle = BorderStyle.FixedSingle;
 
-
-            int count = 1;
+            List<int> itemOrder = Enumerable.Range(1, 10).ToList();
+            Random r = new Random();
+            itemOrder = itemOrder.OrderBy(item => r.Next()).ToList(); //trộn
 
             for (int i = 0; i < rows; i++)
             {
-
-                Random r = new Random();
-                int t = r.Next(1, 10 + 1);
-                if (t == count) t = (t % 10 + 1);
-                count = t;
+                int count = itemOrder[i % 10]; //mỗi lấy ra 1 cái từ cái trộn
 
                 for (int j = 0; j < cols; j++)
                 {
@@ -194,8 +182,8 @@ namespace NimGameProject.Forms
                     //quan trọng
                     if (game.Board[i][j] == 0)
                     {
-                        string path = ImagePath(count);
-                        caro.Controls.Add(CreateItemButton(i, j, path));
+                        Image image = ItemImage(count);
+                        caro.Controls.Add(CreateItemButton(i, j, image));
                     }
 
                     panelBoard.Controls.Add(caro);
@@ -203,40 +191,35 @@ namespace NimGameProject.Forms
             }
         }
 
-        public String ImagePath(int count)
+        public Image ItemImage(int count)
         {
-            string path = "";
+            Image itemImage;
             switch (count)
             {
-                case 1: path = @"D:\Download\carrot.png"; break;
-                case 2: path = @"D:\Download\avocado.png"; break;
-                case 3: path = @"D:\Download\cherry.png"; break;
-                case 4: path = @"D:\Download\mango.png"; break;
-                case 5: path = @"D:\Download\mangosteen.png"; break;
-                case 6: path = @"D:\Download\watermelon.png"; break;
-                case 7: path = @"D:\Download\blueberry.png"; break;
-                case 8: path = @"D:\Download\guava.png"; break;
-                case 9: path = @"D:\Download\peach.png"; break;
-                default: path = @"D:\Download\apple.png"; break;
+                case 1: itemImage = Resources.item_apple; break;
+                case 2: itemImage = Resources.item_avocado; break;
+                case 3: itemImage = Resources.item_cherry; break;
+                case 4: itemImage = Resources.item_blueberry; break;
+                case 5: itemImage = Resources.item_carrot; break;
+                case 6: itemImage = Resources.item_guava; break;
+                case 7: itemImage = Resources.item_mango; break;
+                case 8: itemImage = Resources.item_mangosteen; break;
+                case 9: itemImage = Resources.item_peach; break;
+                default: itemImage = Resources.item_watermelon; break;
             }
             
-
-            return path;
+            return itemImage;
         }
 
 
-        public Button CreateItemButton(int i, int j, string path)
+        public Button CreateItemButton(int i, int j, Image image)
         {
             Button item = new Button();
 
             item.Size = new Size(itemSize, itemSize);
             item.Location = new Point(5, 5); //(caroSize - itemSize)/2
 
-
-            //item.Anchor = AnchorStyles.None;
-            //item.Dock = DockStyle.Fill;
-
-            item.BackgroundImage = Image.FromFile(path);
+            item.BackgroundImage = image;
             item.BackgroundImageLayout = ImageLayout.Zoom;
             item.FlatAppearance.BorderSize = 0;
             item.FlatStyle = FlatStyle.Flat;
@@ -256,6 +239,8 @@ namespace NimGameProject.Forms
 
         private void Item_Click(object sender, EventArgs e)
         {
+            isChange = true;
+
             if (!game.IsPVP && game.GameState.CurrentPlayer) return;
 
             Button item = sender as Button;
@@ -269,6 +254,7 @@ namespace NimGameProject.Forms
             if (game.ChosenItem(i, j, game.GameState.CurrentPlayer))
             {
                 //RowSelectedEffect(i);
+                UpdateUndoButton();
                 item.Visible = false;
             }
             else
@@ -287,16 +273,16 @@ namespace NimGameProject.Forms
 
 
         public void AdjustPlayerButton()
-        { 
+        {
             if (!game.GameState.CurrentPlayer)
             {
                 buttonPlayer1.Enabled = true;
                 buttonPlayer2.Enabled = false;
 
                 buttonPlayer2.Margin = new Padding(10);
-                buttonPlayer2.BackgroundImage = Image.FromFile(player2UnableImagePath);
+                buttonPlayer2.BackgroundImage = player2UnableImage;
                 buttonPlayer1.Margin = new Padding(0);
-                buttonPlayer1.BackgroundImage = Image.FromFile(@"D:\Download\dog.png");
+                buttonPlayer1.BackgroundImage = Resources.player_dog;
             }
             else
             {
@@ -305,9 +291,11 @@ namespace NimGameProject.Forms
 
                 buttonPlayer2.Margin = new Padding(0);
                 buttonPlayer1.Margin = new Padding(10);
-                buttonPlayer2.BackgroundImage = Image.FromFile(player2EnableImagePath);
-                buttonPlayer1.BackgroundImage = Image.FromFile(@"D:\Download\dog_unable.png");
+                buttonPlayer2.BackgroundImage = player2EnableImage;
+                buttonPlayer1.BackgroundImage = Resources.player_dog_unable;
             }
+
+            UpdateUndoButton();
         }
         private void buttonPlayer1_Click(object sender, EventArgs e)
         {
@@ -327,11 +315,16 @@ namespace NimGameProject.Forms
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Bạn có muốn lưu?", "Lưu", MessageBoxButtons.OKCancel);
-
-            if(dialog == DialogResult.OK)
+            //nếu có filePath và hông có thay đổi thì khỏi hiện
+            // currentFilePath != null && !isChange
+            if (isChange || currentFilePath == null )
             {
-                SaveGame();
+                DialogResult dialog = MessageBox.Show("Bạn có muốn lưu?", "Lưu", MessageBoxButtons.OKCancel);
+
+                if (dialog == DialogResult.OK)
+                {
+                    SaveGame();
+                }
             }
 
             ExitToMenu.Invoke();
@@ -339,7 +332,6 @@ namespace NimGameProject.Forms
 
         private void SaveGame()
         {
-            
             SaveData data = new SaveData();
             data.Board = game.Board;
             data.CurrentPlayer = game.GameState.CurrentPlayer;
@@ -364,14 +356,13 @@ namespace NimGameProject.Forms
         public void ResetGame()
         {
             game = new GameEngine(isPVP, true, new GameState(gameInit));
-
             InitGame();
-
         }
 
 
         public async void ComputerMove()
         {
+            isChange = true;
 
             var move = game.GetComputerMove();
 
@@ -380,8 +371,68 @@ namespace NimGameProject.Forms
             await AnimateComputerMove(move.piles, move.items);
 
             game.ApplyMove(move.piles, move.items);
+        }
 
-            //ResetRowEffect(move.piles);
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("LUẬT CHƠI NIM\n\r\n\r" +
+                "- Mỗi lượt chỉ được chọn 1 hàng.\n\r" +
+                "- Có thể lấy 1 hoặc nhiều vật phẩm trong hàng đó.\n\r" +
+                "- Không được lấy ở nhiều hàng cùng lúc.\n\r" +
+                "- Nhấn nút bên dưới để kết thúc lượt.\n\r" +
+                "- Nếu lấy hết 1 hàng, lượt sẽ tự động kết thúc.\n\r\n\r" +
+                "- Ai lấy vật phẩm cuối cùng là người thắng.");
+        }
+
+        private void panelBoard_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void UpdateUndoButton()
+        {
+            bool canUndo = game.CanUndo();
+            buttonUndo.Enabled = canUndo;
+            buttonUndo.BackgroundImage = canUndo
+                ? Resources.button_undo
+                : Resources.button_undo_unable;
+        }
+        private void buttonUndo_Click(object sender, EventArgs e)
+        {
+            if (game.UndoInTurn())
+            {
+                RefreshBoard();
+            }
+
+            UpdateUndoButton();
+        }
+
+        private void RefreshBoard()
+        {
+            // Hiện lại item vừa undo trên UI
+            foreach (Control c in panelBoard.Controls)
+            {
+                Panel p = c as Panel;
+                Point pos = (Point)p.Tag;
+
+                int i = pos.X, j = pos.Y;
+
+                // Nếu board logic = 0 nhưng bị visible = false thì hiện lại
+                if (game.Board[i][j] == 0)
+                {
+                    foreach (Control btn in p.Controls)
+                    {
+                        if (btn is Button)
+                            btn.Visible = true;
+                    }
+                }
+            }
+
+            // Reset màu nếu không còn chọn hàng nào
+            if (!game.InTurnCheck)
+            {
+                ResetRowEffect();
+            }
         }
 
         /// ---- EFFECT ----///
@@ -419,32 +470,36 @@ namespace NimGameProject.Forms
 
         private void ResetRowEffect()
         {
-            int row = game.ChosenPile;
+            //int row = game.ChosenPile;
 
             foreach (Control c in panelBoard.Controls)
             {
                 Panel p = c as Panel;
                 Point position = (Point)p.Tag;
 
-                if (position.X == row)
+                //if (position.X == row)
+
+                if ((position.X + position.Y) % 2 == 0)
                 {
-                    if ((position.X + position.Y) % 2 == 0)
+                    p.BackColor = Color.LightGoldenrodYellow;
+                }
+                else
+                {
                     {
-                        p.BackColor = Color.LightGoldenrodYellow;
-                    }
-                    else
-                    {
-                        {
-                            p.BackColor = Color.LightYellow;
-                        }
+                        p.BackColor = Color.LightYellow;
                     }
                 }
+
             }
         }
 
         public async Task AnimateComputerMove(int pile, int items)
         {
             int remove = 0;
+
+            //máy chơi thì hông có hiện undo
+            buttonUndo.Enabled = false;
+            buttonUndo.BackgroundImage = Resources.button_undo_unable;
 
             foreach (Control c in panelBoard.Controls)
             {
@@ -467,11 +522,6 @@ namespace NimGameProject.Forms
                     }
                 }
             }
-        }
-
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

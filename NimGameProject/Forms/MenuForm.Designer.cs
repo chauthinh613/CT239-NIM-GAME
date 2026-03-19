@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonPVE = new System.Windows.Forms.Button();
@@ -44,7 +43,7 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableLayoutPanel1.BackgroundImage")));
+            this.tableLayoutPanel1.BackgroundImage = global::NimGameProject.Properties.Resources.background;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
@@ -93,7 +92,7 @@
             // buttonPVE
             // 
             this.buttonPVE.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonPVE.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPVE.BackgroundImage")));
+            this.buttonPVE.BackgroundImage = global::NimGameProject.Properties.Resources.textbox_background;
             this.buttonPVE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonPVE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPVE.FlatAppearance.BorderSize = 0;
@@ -110,7 +109,7 @@
             // buttonPVP
             // 
             this.buttonPVP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonPVP.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPVP.BackgroundImage")));
+            this.buttonPVP.BackgroundImage = global::NimGameProject.Properties.Resources.textbox_background;
             this.buttonPVP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonPVP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPVP.FlatAppearance.BorderSize = 0;
@@ -127,7 +126,7 @@
             // buttonHistory
             // 
             this.buttonHistory.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonHistory.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonHistory.BackgroundImage")));
+            this.buttonHistory.BackgroundImage = global::NimGameProject.Properties.Resources.textbox_background;
             this.buttonHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonHistory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonHistory.FlatAppearance.BorderSize = 0;
@@ -144,7 +143,7 @@
             // buttonSetting
             // 
             this.buttonSetting.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonSetting.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSetting.BackgroundImage")));
+            this.buttonSetting.BackgroundImage = global::NimGameProject.Properties.Resources.textbox_background;
             this.buttonSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonSetting.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSetting.FlatAppearance.BorderSize = 0;
@@ -161,7 +160,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::NimGameProject.Properties.Resources.tittle_game;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(348, 184);

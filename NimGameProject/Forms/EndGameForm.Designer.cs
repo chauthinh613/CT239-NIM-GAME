@@ -98,7 +98,7 @@
             // buttonHome
             // 
             this.buttonHome.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonHome.BackgroundImage")));
+            this.buttonHome.BackgroundImage = global::NimGameProject.Properties.Resources.button_home;
             this.buttonHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonHome.FlatAppearance.BorderSize = 0;
@@ -113,7 +113,7 @@
             // buttonRestart
             // 
             this.buttonRestart.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonRestart.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRestart.BackgroundImage")));
+            this.buttonRestart.BackgroundImage = global::NimGameProject.Properties.Resources.button_restart;
             this.buttonRestart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonRestart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRestart.FlatAppearance.BorderSize = 0;

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelBoard = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -37,7 +36,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonHome = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonHelp = new System.Windows.Forms.Button();
             this.buttonUndo = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -47,7 +46,7 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.LemonChiffon;
-            this.tableLayoutPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableLayoutPanel1.BackgroundImage")));
+            this.tableLayoutPanel1.BackgroundImage = global::NimGameProject.Properties.Resources.background;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panelBoard, 0, 2);
@@ -72,6 +71,7 @@
             this.panelBoard.Name = "panelBoard";
             this.panelBoard.Size = new System.Drawing.Size(200, 100);
             this.panelBoard.TabIndex = 0;
+            this.panelBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBoard_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -134,7 +134,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.buttonHome, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonReset, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.buttonSave, 5, 0);
+            this.tableLayoutPanel3.Controls.Add(this.buttonHelp, 5, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonUndo, 7, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 23);
@@ -146,7 +146,7 @@
             // 
             // buttonHome
             // 
-            this.buttonHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonHome.BackgroundImage")));
+            this.buttonHome.BackgroundImage = global::NimGameProject.Properties.Resources.button_home;
             this.buttonHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonHome.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -161,7 +161,7 @@
             // 
             // buttonReset
             // 
-            this.buttonReset.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonReset.BackgroundImage")));
+            this.buttonReset.BackgroundImage = global::NimGameProject.Properties.Resources.button_restart;
             this.buttonReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonReset.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -174,24 +174,24 @@
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
-            // buttonSave
+            // buttonHelp
             // 
-            this.buttonSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSave.BackgroundImage")));
-            this.buttonSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSave.FlatAppearance.BorderSize = 0;
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Location = new System.Drawing.Point(307, 3);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(66, 68);
-            this.buttonSave.TabIndex = 2;
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.buttonHelp.BackgroundImage = global::NimGameProject.Properties.Resources.button_help;
+            this.buttonHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonHelp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonHelp.FlatAppearance.BorderSize = 0;
+            this.buttonHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHelp.Location = new System.Drawing.Point(307, 3);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(66, 68);
+            this.buttonHelp.TabIndex = 2;
+            this.buttonHelp.UseVisualStyleBackColor = true;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonUndo
             // 
-            this.buttonUndo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUndo.BackgroundImage")));
+            this.buttonUndo.BackgroundImage = global::NimGameProject.Properties.Resources.button_undo;
             this.buttonUndo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonUndo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonUndo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -202,6 +202,7 @@
             this.buttonUndo.Size = new System.Drawing.Size(66, 68);
             this.buttonUndo.TabIndex = 3;
             this.buttonUndo.UseVisualStyleBackColor = true;
+            this.buttonUndo.Click += new System.EventHandler(this.buttonUndo_Click);
             // 
             // GameForm
             // 
@@ -231,7 +232,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button buttonHome;
         private System.Windows.Forms.Button buttonReset;
-        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonHelp;
         private System.Windows.Forms.Button buttonUndo;
     }
 }

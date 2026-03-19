@@ -42,17 +42,22 @@ namespace NimGameProject
             restart,
             undo,
             help,
+            plus,
+            minus,
         }
         /// type
         /// home, restart, undo, sound
         /// 
         public static void ApplyButtonHoverEffect(Button button, ButtonType type)
         {
+
             string normalName = $"button_{type}";
             string hoverName = $"button_{type}_hover";
+            string unableName = $"button_{type}_unable";
 
             var normalImage = (Image)Properties.Resources.ResourceManager.GetObject(normalName);
             var hoverImage = (Image)Properties.Resources.ResourceManager.GetObject(hoverName);
+            var unableImage = (Image)Properties.Resources.ResourceManager.GetObject(unableName);
 
             button.BackgroundImageLayout = ImageLayout.Zoom;
             button.FlatStyle = FlatStyle.Flat;
@@ -64,13 +69,22 @@ namespace NimGameProject
             button.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button.FlatAppearance.MouseDownBackColor = Color.Transparent;
 
+
             button.MouseEnter += (s, e) =>
             {
+                if (!button.Enabled) return;
                 button.BackgroundImage = hoverImage;
             };
             button.MouseLeave += (s, e) =>
             {
-                button.BackgroundImage = normalImage;
+                if (!button.Enabled)
+                {
+                    button.BackgroundImage = unableImage;
+                }
+                else
+                {
+                    button.BackgroundImage = normalImage;
+                }
             };
         }
     }

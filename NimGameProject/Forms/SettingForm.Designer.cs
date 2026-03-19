@@ -36,6 +36,11 @@
             this.buttonMinusPiles = new System.Windows.Forms.Button();
             this.buttonAddPiles = new System.Windows.Forms.Button();
             this.textPilesCount = new System.Windows.Forms.Button();
+            this.buttonMinusCols = new System.Windows.Forms.Button();
+            this.textColsCount = new System.Windows.Forms.Button();
+            this.buttonAddCols = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -54,6 +59,7 @@
             this.buttonHome.Size = new System.Drawing.Size(80, 80);
             this.buttonHome.TabIndex = 1;
             this.buttonHome.UseVisualStyleBackColor = true;
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -101,6 +107,11 @@
             this.tableLayoutPanel3.Controls.Add(this.buttonMinusPiles, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.buttonAddPiles, 2, 2);
             this.tableLayoutPanel3.Controls.Add(this.textPilesCount, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.buttonMinusCols, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.textColsCount, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.buttonAddCols, 2, 4);
+            this.tableLayoutPanel3.Controls.Add(this.label1, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label2, 1, 3);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 121);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -108,7 +119,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(444, 539);
@@ -121,7 +132,7 @@
             this.buttonMinusPiles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonMinusPiles.FlatAppearance.BorderSize = 0;
             this.buttonMinusPiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinusPiles.Location = new System.Drawing.Point(23, 187);
+            this.buttonMinusPiles.Location = new System.Drawing.Point(23, 167);
             this.buttonMinusPiles.Name = "buttonMinusPiles";
             this.buttonMinusPiles.Size = new System.Drawing.Size(64, 64);
             this.buttonMinusPiles.TabIndex = 0;
@@ -135,7 +146,7 @@
             this.buttonAddPiles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonAddPiles.FlatAppearance.BorderSize = 0;
             this.buttonAddPiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddPiles.Location = new System.Drawing.Point(356, 187);
+            this.buttonAddPiles.Location = new System.Drawing.Point(356, 167);
             this.buttonAddPiles.Name = "buttonAddPiles";
             this.buttonAddPiles.Size = new System.Drawing.Size(64, 64);
             this.buttonAddPiles.TabIndex = 1;
@@ -150,11 +161,73 @@
             this.textPilesCount.FlatAppearance.BorderSize = 0;
             this.textPilesCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.textPilesCount.Font = new System.Drawing.Font("DeArPix 1.94", 20F);
-            this.textPilesCount.Location = new System.Drawing.Point(179, 176);
+            this.textPilesCount.Location = new System.Drawing.Point(179, 156);
             this.textPilesCount.Name = "textPilesCount";
             this.textPilesCount.Size = new System.Drawing.Size(85, 85);
             this.textPilesCount.TabIndex = 2;
             this.textPilesCount.UseVisualStyleBackColor = true;
+            // 
+            // buttonMinusCols
+            // 
+            this.buttonMinusCols.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonMinusCols.BackgroundImage = global::NimGameProject.Properties.Resources.button_minus;
+            this.buttonMinusCols.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonMinusCols.FlatAppearance.BorderSize = 0;
+            this.buttonMinusCols.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMinusCols.Location = new System.Drawing.Point(23, 337);
+            this.buttonMinusCols.Name = "buttonMinusCols";
+            this.buttonMinusCols.Size = new System.Drawing.Size(64, 64);
+            this.buttonMinusCols.TabIndex = 3;
+            this.buttonMinusCols.UseVisualStyleBackColor = true;
+            this.buttonMinusCols.Click += new System.EventHandler(this.buttonMinusCols_Click);
+            // 
+            // textColsCount
+            // 
+            this.textColsCount.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textColsCount.BackgroundImage = global::NimGameProject.Properties.Resources.textbox_square;
+            this.textColsCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.textColsCount.FlatAppearance.BorderSize = 0;
+            this.textColsCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.textColsCount.Font = new System.Drawing.Font("DeArPix 1.94", 20F);
+            this.textColsCount.Location = new System.Drawing.Point(179, 326);
+            this.textColsCount.Name = "textColsCount";
+            this.textColsCount.Size = new System.Drawing.Size(85, 85);
+            this.textColsCount.TabIndex = 4;
+            this.textColsCount.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddCols
+            // 
+            this.buttonAddCols.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonAddCols.BackgroundImage = global::NimGameProject.Properties.Resources.button_plus;
+            this.buttonAddCols.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonAddCols.FlatAppearance.BorderSize = 0;
+            this.buttonAddCols.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddCols.Location = new System.Drawing.Point(356, 337);
+            this.buttonAddCols.Name = "buttonAddCols";
+            this.buttonAddCols.Size = new System.Drawing.Size(64, 64);
+            this.buttonAddCols.TabIndex = 5;
+            this.buttonAddCols.UseVisualStyleBackColor = true;
+            this.buttonAddCols.Click += new System.EventHandler(this.buttonAddCols_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(128, 124);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 25);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Số lượng hàng tối đa";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(134, 294);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(176, 25);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Số lượng cột tối đa";
             // 
             // SettingForm
             // 
@@ -167,9 +240,11 @@
             this.MinimumSize = new System.Drawing.Size(600, 800);
             this.Name = "SettingForm";
             this.Text = "SettingForm";
+            this.Load += new System.EventHandler(this.SettingForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -183,5 +258,10 @@
         private System.Windows.Forms.Button buttonMinusPiles;
         private System.Windows.Forms.Button buttonAddPiles;
         private System.Windows.Forms.Button textPilesCount;
+        private System.Windows.Forms.Button buttonMinusCols;
+        private System.Windows.Forms.Button textColsCount;
+        private System.Windows.Forms.Button buttonAddCols;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

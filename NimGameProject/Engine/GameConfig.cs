@@ -17,8 +17,8 @@ namespace NimGameProject.GameLogic
 
         public GameConfig()
         {
-                Rows = 10;
-                MaxColumns = 10;
+                Rows = 5;
+                MaxColumns = 5;
                 SoundOn = true;
         }
 
