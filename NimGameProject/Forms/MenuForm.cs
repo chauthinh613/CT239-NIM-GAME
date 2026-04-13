@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NimGameProject.Engine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,14 +17,15 @@ namespace NimGameProject.Forms
         public event Action ButtonPVPClicked;
         public event Action ButtonHistoryClicked;
         public event Action ButtonSettingClicked;
+
         public MenuForm()
         {
             InitializeComponent();
 
-            Effect.ApplyTextboxHoverEffect(buttonPVE);
-            Effect.ApplyTextboxHoverEffect(buttonPVP);
-            Effect.ApplyTextboxHoverEffect(buttonHistory);
-            Effect.ApplyTextboxHoverEffect(buttonSetting);
+            EffectManager.ApplyTextboxHoverEffect(buttonPVE);
+            EffectManager.ApplyTextboxHoverEffect(buttonPVP);
+            EffectManager.ApplyTextboxHoverEffect(buttonHistory);
+            EffectManager.ApplyTextboxHoverEffect(buttonSetting);
         }
 
         private void buttonPVE_Click(object sender, EventArgs e)

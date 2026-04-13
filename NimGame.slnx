@@ -1,38 +1,5 @@
 <Solution>
   <Folder Name="/CT239/">
     <Project Path="NimGameProject/NimGameProject.csproj" Id="f4ab66d7-0fad-4dc2-bcb2-16e8d6e8d1b2" />
-    <Project Path="Test/Test.csproj" Id="5c03fec3-21d8-4b18-b5ed-c736f00ac677" />
   </Folder>
-  <Folder Name="/CT239/Resources/" />
-  <Folder Name="/CT239/Resources/Images/">
-    <File Path="../../../Download/New folder/apple.png" />
-    <File Path="../../../Download/New folder/avocado.png" />
-    <File Path="../../../Download/New folder/carrot.png" />
-    <File Path="../../../Download/New folder/cat.png" />
-    <File Path="../../../Download/New folder/cat_unable.png" />
-    <File Path="../../../Download/New folder/cherry.png" />
-    <File Path="../../../Download/New folder/coin.png" />
-    <File Path="../../../Download/New folder/coin_premium.png" />
-    <File Path="../../../Download/New folder/computer.png" />
-    <File Path="../../../Download/New folder/dog.png" />
-    <File Path="../../../Download/New folder/dog_unable.png" />
-    <File Path="../../../Download/New folder/help.png" />
-    <File Path="../../../Download/New folder/home.png" />
-    <File Path="../../../Download/New folder/mango.png" />
-    <File Path="../../../Download/New folder/mute_theme_song.png" />
-    <File Path="../../../Download/New folder/theme_sound.png" />
-    <File Path="../../../Download/New folder/undo.png" />
-  </Folder>
-  <Folder Name="/CT239/Resources/Music/">
-    <File Path="../../../Download/game_win.wav" />
-    <File Path="../../../Download/nom_sound.wav" />
-    <File Path="../../../Download/select_sound.wav" />
-    <File Path="../../../Download/switch_turn.wav" />
-  </Folder>
-  <Project Path="NimGame/NimGame.csproj" />
-  <Project Path="TestGame/TestGame.csproj" />
-  <Project Path="TestGUI/TestGUI.csproj" Id="d06ccf29-52d0-4d2c-91c6-4cb9fe74eb0c" />
-  <Project Path="TestGUIForm/TestGUIForm.csproj" Id="78f1b595-3a10-4fa9-9476-ec859ff69be7" />
-  <Project Path="TestLogic/TestLogic.csproj" Id="af834ac2-83c5-4958-9a8b-9f957c5a5022" />
-  <Project Path="WinformGUITest/WinformGUITest.csproj" Id="7451fd6b-738c-4134-8ed6-536976878ae1" />
 </Solution>

@@ -1,4 +1,5 @@
-﻿using NimGameProject.GameLogic;
+﻿using NimGameProject.Engine;
+using NimGameProject.GameLogic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,9 @@ namespace NimGameProject.Forms
         {
             InitializeComponent();
             config = new GameConfig();
+
+            SoundManager.Init(config);
+            SoundManager.PlaySoundTheme();
         }
 
 
@@ -44,6 +48,9 @@ namespace NimGameProject.Forms
         private void MenuForm_Load()
         {
             MenuForm menu = new MenuForm();
+
+            //SoundManager.UpdateConfig(config); //cấu hình đồng bộ với setting lại
+
 
             menu.Dock = DockStyle.Fill;
             menu.TopLevel = false;
@@ -88,6 +95,7 @@ namespace NimGameProject.Forms
             };
 
             game.Show();
+            SoundManager.PlaySoundTheme();
         }
 
         private void GameForm_Load(SaveData data, string filePath)
@@ -123,7 +131,7 @@ namespace NimGameProject.Forms
             panelMain.Controls.Add(history);
 
             history.ExitToMenu += MenuForm_Load;
-            history.HistoryButtonClicked += (data) =>
+            history.LoadSavedGame += (data) =>
             {
                 GameForm_Load(data.saveData, data.fullPath);
             };
@@ -170,8 +178,11 @@ namespace NimGameProject.Forms
 
         private void MenuForm_Load_Config(GameConfig config)
         {
-            MenuForm_Load();
             this.config = config;
+            SoundManager.UpdateConfig(config);
+            MenuForm_Load();
+
+
         }
     }
 }

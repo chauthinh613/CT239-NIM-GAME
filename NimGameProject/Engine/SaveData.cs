@@ -13,6 +13,5 @@ namespace NimGameProject.GameLogic
         public bool IsPVP { get; set; }
         public int[][] Board { get; set; }
 
-
     }
 }

@@ -1,0 +1,22 @@
+{
+  "CurrentPlayer": false,
+  "IsGameOver": false,
+  "IsPVP": true,
+  "Board": [
+    [
+      0,
+      0,
+      -1
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ]
+  ]
+}

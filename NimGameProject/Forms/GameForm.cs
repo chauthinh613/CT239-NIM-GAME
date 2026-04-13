@@ -1,4 +1,5 @@
-﻿using NimGameProject.GameLogic;
+﻿using NimGameProject.Engine;
+using NimGameProject.GameLogic;
 using NimGameProject.Properties;
 using System;
 using System.Collections.Generic;
@@ -49,12 +50,15 @@ namespace NimGameProject.Forms
             InitializeComponent();
         }
 
-        public GameForm(bool isPVP, GameConfig config)
+        public GameForm(bool isPVP, GameConfig config) //tạo từ menu
         {
             InitializeComponent();
+
             this.isPVP = isPVP;
 
             InitState(config);
+
+            InitGame();
 
             isChange = false;
         }
@@ -64,7 +68,7 @@ namespace NimGameProject.Forms
             InitializeComponent();
 
             this.isPVP = data.IsPVP;
-            this.game = new GameEngine(isPVP, true, new GameState(data.CurrentPlayer, data.Board));
+            this.game = new GameEngine(isPVP, new GameState(data.CurrentPlayer, data.Board));
             this.game.GameState.IsGameOver = data.IsGameOver;
 
             this.gameInit = new GameState( data.CurrentPlayer, data.Board);
@@ -72,6 +76,8 @@ namespace NimGameProject.Forms
             this.currentFilePath = path;
 
             /// nhớ check gameover (bị bug nếu máy đang lấy mà lưu game ///
+            /// 
+            InitGame();
 
             isChange = false;
         }
@@ -80,12 +86,12 @@ namespace NimGameProject.Forms
         {
             game = new GameEngine(isPVP, config);
 
-            gameInit = game.GameState.CloneGameState(); //lưu trạng thái đầu tiên của game để có gì reset
+            gameInit = game.GameState.Clone(); //lưu trạng thái đầu tiên của game để có gì reset
         }
 
         private void InitGame()
         {
-            AdjustSize(game.GameState.PilesCount, game.GameState.GetMaxInPiles());
+            AdjustSize(game.GameState.PileCount, game.GameState.GetMaxInPiles());
 
             game.SwitchPlayerEvent += AdjustPlayerButton;
             game.GameOverEvent += GameOver;
@@ -95,26 +101,33 @@ namespace NimGameProject.Forms
 
             if (isPVP)
             {
-                player2EnableImage = Resources.player_cat;
-                player2UnableImage = Resources.player_cat_unable;
+                player2EnableImage = Resources.button_cat;
+                player2UnableImage = Resources.button_cat_unable;
             }
             else
             {
-                player2EnableImage = Resources.player_computer;
-                player2UnableImage = Resources.player_computer_unable;
+                player2EnableImage = Resources.button_computer;
+                player2UnableImage = Resources.button_computer_unable;
             }
 
             InitGameBoard();
         }
         private void GameForm_Load(object sender, EventArgs e)
         {
-            InitGame();
+            EffectManager.ApplyButtonHoverEffect(buttonHome, EffectManager.ButtonType.home);
+            EffectManager.ApplyButtonHoverEffect(buttonReset, EffectManager.ButtonType.restart);
+            EffectManager.ApplyButtonHoverEffect(buttonHelp, EffectManager.ButtonType.help);
+            EffectManager.ApplyButtonHoverEffect(buttonUndo, EffectManager.ButtonType.undo);
 
-            Effect.ApplyButtonHoverEffect(buttonHome, Effect.ButtonType.home);
-            Effect.ApplyButtonHoverEffect(buttonReset, Effect.ButtonType.restart);
-            Effect.ApplyButtonHoverEffect(buttonHelp, Effect.ButtonType.help);
-            Effect.ApplyButtonHoverEffect(buttonUndo, Effect.ButtonType.undo);
-            //Effect.ApplyButtonHoverEffect(buttonSave, "save");
+            EffectManager.ApplyButtonHoverEffect(buttonPlayer1, EffectManager.ButtonType.dog);
+            if (isPVP)
+            {
+                EffectManager.ApplyButtonHoverEffect(buttonPlayer2, EffectManager.ButtonType.cat);
+            }
+            else
+            {
+                EffectManager.ApplyButtonHoverEffect(buttonPlayer2, EffectManager.ButtonType.computer);
+            }
         }
 
         public void AdjustSize(int pilesCount, int max) //chỉnh kích thước nếu ít thì cho bự, nhiều thì cho nhỏ lại
@@ -160,6 +173,8 @@ namespace NimGameProject.Forms
             panelBoard.Size = new Size(cols * caroSize, rows * caroSize);
             //panelBoard.BorderStyle = BorderStyle.FixedSingle;
 
+            panelBoard.SuspendLayout();
+
             List<int> itemOrder = Enumerable.Range(1, 10).ToList();
             Random r = new Random();
             itemOrder = itemOrder.OrderBy(item => r.Next()).ToList(); //trộn
@@ -189,6 +204,8 @@ namespace NimGameProject.Forms
                     panelBoard.Controls.Add(caro);
                 }
             }
+
+            panelBoard.ResumeLayout();
         }
 
         public Image ItemImage(int count)
@@ -254,6 +271,8 @@ namespace NimGameProject.Forms
             if (game.ChosenItem(i, j, game.GameState.CurrentPlayer))
             {
                 //RowSelectedEffect(i);
+                SoundManager.PlaySoundNom();
+
                 UpdateUndoButton();
                 item.Visible = false;
             }
@@ -262,16 +281,7 @@ namespace NimGameProject.Forms
                 MessageBox.Show("Hãy chọn chung 1 hàng");
             }
         }
-        private void Item_Enter_Effect(object sender, EventArgs e)
-        {
-            Button item = sender as Button;
-
-            //selectItems.Play();
-            item.Size = new Size(caroSize, caroSize);
-            item.Location = new Point(0, 0);
-        }
-
-
+        
         public void AdjustPlayerButton()
         {
             if (!game.GameState.CurrentPlayer)
@@ -282,7 +292,7 @@ namespace NimGameProject.Forms
                 buttonPlayer2.Margin = new Padding(10);
                 buttonPlayer2.BackgroundImage = player2UnableImage;
                 buttonPlayer1.Margin = new Padding(0);
-                buttonPlayer1.BackgroundImage = Resources.player_dog;
+                buttonPlayer1.BackgroundImage = Resources.button_dog;
             }
             else
             {
@@ -292,8 +302,10 @@ namespace NimGameProject.Forms
                 buttonPlayer2.Margin = new Padding(0);
                 buttonPlayer1.Margin = new Padding(10);
                 buttonPlayer2.BackgroundImage = player2EnableImage;
-                buttonPlayer1.BackgroundImage = Resources.player_dog_unable;
+                buttonPlayer1.BackgroundImage = Resources.button_dog_unable;
             }
+
+            SoundManager.PlaySoundSwitch();
 
             UpdateUndoButton();
         }
@@ -355,7 +367,7 @@ namespace NimGameProject.Forms
 
         public void ResetGame()
         {
-            game = new GameEngine(isPVP, true, new GameState(gameInit));
+            game = new GameEngine(isPVP, new GameState(gameInit));
             InitGame();
         }
 
@@ -429,13 +441,21 @@ namespace NimGameProject.Forms
             }
 
             // Reset màu nếu không còn chọn hàng nào
-            if (!game.InTurnCheck)
+            if (!game.IsInTurn)
             {
                 ResetRowEffect();
             }
         }
 
         /// ---- EFFECT ----///
+        private void Item_Enter_Effect(object sender, EventArgs e)
+        {
+            Button item = sender as Button;
+
+            SoundManager.PlaySoundSelect();
+            item.Size = new Size(caroSize, caroSize);
+            item.Location = new Point(0, 0);
+        }
         private void Item_Leave_Effect(object sender, EventArgs e)
         {
             Button item = sender as Button;
@@ -451,7 +471,7 @@ namespace NimGameProject.Forms
                 Panel p = c as Panel;
                 Point position = (Point)p.Tag;
 
-                if (position.X == game.ChosenPile)
+                if (position.X == game.SelectedPileIndex)
                 {
 
                     if ((position.X + position.Y) % 2 == 0)
@@ -501,6 +521,8 @@ namespace NimGameProject.Forms
             buttonUndo.Enabled = false;
             buttonUndo.BackgroundImage = Resources.button_undo_unable;
 
+            await Task.Delay(600);
+
             foreach (Control c in panelBoard.Controls)
             {
                 Panel p = c as Panel;
@@ -514,7 +536,7 @@ namespace NimGameProject.Forms
                         {
                             btn.Visible = false;
 
-                            await Task.Delay(200);
+                            await Task.Delay(220);
 
                             remove++;
                             if (remove == items) return;

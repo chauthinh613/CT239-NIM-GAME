@@ -10,21 +10,32 @@ namespace NimGameProject.GameLogic
 {
     internal class GameState
     {
-        private const int MAX_ROW = 10; //số đống tối đa là 10
-        private const int MAX_COL = 10; //số vật phẩm tối đa là 10
-        private const int MIN_ROW = 1;
-        private const int MIN_COL = 1;
-
-        private int pilesCount; //số đống N, 
+        private int pileCount; //số đống N, 
         private int[] piles; //số lượng mỗi đống
         private bool currentPlayer; //0 player1; 1 player2
         private bool isGameOver; //kiểm tra trạng thái trò chơi kết thúc chưa
+
+        private int[][] board;
+        public int[][] Board { get { return board; } }
+        //-1: không có item
+        //0: item chưa được chọn
+        //1: item đã được chọn
+
+        // get set
+        public int PileCount { get { return pileCount; } set { pileCount = value; } }
+        public int[] Piles { get { return piles; } private set { } }
+        public bool CurrentPlayer
+        {
+            get { return currentPlayer; }
+            set { currentPlayer = value; }
+        }
+        public bool IsGameOver { get { return isGameOver; } set { isGameOver = value; } }
 
         private Random random;
 
         public GameState() //tạo game mặc định
         {
-            this.pilesCount = 4;
+            this.pileCount = 4;
             this.currentPlayer = false;
             this.isGameOver = false;
 
@@ -34,20 +45,20 @@ namespace NimGameProject.GameLogic
             {
                 piles[i] = i + 1;
             }
+
+            InitBoard();
             //tạo trò chơi kiểu mặc định
-            //O
-            //OO
-            //OOO
-            //OOOO
         }
 
         public GameState(int pilesCount, int[] piles, bool currentPlayer, bool isGameOver)
         {
-            this.pilesCount = pilesCount;
+            this.pileCount = pilesCount;
             this.piles = piles;
             this.currentPlayer = currentPlayer;
             this.isGameOver = isGameOver;
             this.random = new Random();
+
+            InitBoard();
         }
 
         public GameState(int pilesCount, int min, int max) //tạo game với số đống cụ thể và số lượng vật phẩm ngẫu nhiên
@@ -57,11 +68,15 @@ namespace NimGameProject.GameLogic
 
         public GameState(GameState gameState)
         {
-            this.pilesCount = gameState.pilesCount;
+            this.pileCount = gameState.pileCount;
             this.currentPlayer = gameState.currentPlayer;
             this.isGameOver = gameState.isGameOver;
 
             this.piles = gameState.piles.ToArray();
+
+            this.board = gameState.board
+                .Select(row => row.ToArray())
+                .ToArray(); //copy lại
         }
 
         public GameState(bool currentPlayer, int[][] board)
@@ -69,10 +84,12 @@ namespace NimGameProject.GameLogic
             this.currentPlayer = currentPlayer;
             this.isGameOver = false;
 
-            this.pilesCount = board.Length;
-            this.piles = new int[pilesCount];
+            this.pileCount = board.Length;
+            this.piles = new int[pileCount];
 
-            for(int i = 0; i < board.Length; i++) //khởi tạo = 0
+            this.board = board.Select(row => row.ToArray()).ToArray();
+
+            for (int i = 0; i < board.Length; i++) //khởi tạo = 0
             {
                 this.piles[i] = 0;
             }
@@ -86,7 +103,7 @@ namespace NimGameProject.GameLogic
             }
 
             //xử lý bug vụ nếu lỡ bị lỗi board rỗng
-            if(pilesCount == 0)
+            if(pileCount == 0)
             {
                 this.isGameOver = true;
             }
@@ -94,7 +111,7 @@ namespace NimGameProject.GameLogic
 
         public void CreateRandom(int pilesCount, int min, int max)
         {
-            this.pilesCount = pilesCount;
+            this.pileCount = pilesCount;
             this.currentPlayer = false;
             this.isGameOver = false;
 
@@ -107,30 +124,32 @@ namespace NimGameProject.GameLogic
 
                 piles[i] = random.Next(min, max + 1);
             }
+
+            InitBoard();
         }
 
         public int GetMaxInPiles()
         {
             int max = 0;
-            for (int i = 0; i < this.pilesCount; i++)
+            for (int i = 0; i < this.pileCount; i++)
             {
                 if (this.piles[i] > max) max = this.piles[i];
             }
             return max;
         }
-        public int[][] GetStateBoard()
+        public int[][] InitBoard()
         {
             int max = this.GetMaxInPiles();
 
 
-            int[][] board = new int[this.pilesCount][];
+            this.board = new int[this.pileCount][];
 
-            for(int i =  0; i < this.pilesCount; i++)
+            for(int i =  0; i < this.pileCount; i++)
             {
                 board[i] = new int[max];
             }
 
-            for (int i = 0; i < pilesCount; i++)
+            for (int i = 0; i < pileCount; i++)
             {
                 for (int j = 0; j < piles[i]; j++)
                 {
@@ -148,7 +167,7 @@ namespace NimGameProject.GameLogic
         //tính lại số đống và số lượng mỗi đống còn lại từ board (sử dụng khi load game)
         public void RecalculatePiles(int[][] board)
         {
-            this.pilesCount = board.Length;
+            this.pileCount = board.Length;
 
             for (int i = 0; i < board.Length; i++)
             {
@@ -161,20 +180,12 @@ namespace NimGameProject.GameLogic
             }
         }
 
-        public GameState CloneGameState()
+        public GameState Clone()
         {
             GameState stateClone = new GameState(this);
+
             return stateClone;
         }
-
-        public int PilesCount { get { return pilesCount; } set { pilesCount = value; } }
-        public int[] Piles { get { return piles; } private set { } }
-        public bool CurrentPlayer
-        {
-            get { return currentPlayer; }
-            set { currentPlayer = value; }
-        }
-        public bool IsGameOver { get { return isGameOver; } set { isGameOver = value; } }
 
     }
     

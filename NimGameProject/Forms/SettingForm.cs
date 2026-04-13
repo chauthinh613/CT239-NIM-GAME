@@ -1,4 +1,5 @@
-﻿using NimGameProject.GameLogic;
+﻿using NimGameProject.Engine;
+using NimGameProject.GameLogic;
 using NimGameProject.Properties;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,21 @@ namespace NimGameProject.Forms
             textColsCount.TextAlign = ContentAlignment.MiddleCenter;
             textColsCount.Padding = new Padding(5, 0, 0, 0);
 
+            UpdateButtonSound();
+        }
 
+        private void UpdateButtonSound()
+        {
+            if (config.SoundOn)
+            {
+                buttonSound.BackgroundImage = Resources.button_sound;
+                EffectManager.ApplyButtonHoverEffect(buttonSound, EffectManager.ButtonType.sound);
+            }
+            else
+            {
+                buttonSound.BackgroundImage= Resources.button_mute_sound;
+                EffectManager.ApplyButtonHoverEffect(buttonSound, EffectManager.ButtonType.mute_sound);
+            }
         }
 
         private void buttonMinusPiles_Click(object sender, EventArgs e)
@@ -124,13 +139,13 @@ namespace NimGameProject.Forms
 
         private void UpdateAllButtons()
         {
-            UpdateButton(buttonMinusPiles, Effect.ButtonType.minus, buttonMinusPiles.Enabled);
-            UpdateButton(buttonAddPiles, Effect.ButtonType.plus, buttonAddPiles.Enabled);
-            UpdateButton(buttonMinusCols, Effect.ButtonType.minus, buttonMinusCols.Enabled);
-            UpdateButton(buttonAddCols, Effect.ButtonType.plus, buttonAddCols.Enabled);
+            UpdateButton(buttonMinusPiles, EffectManager.ButtonType.minus, buttonMinusPiles.Enabled);
+            UpdateButton(buttonAddPiles, EffectManager.ButtonType.plus, buttonAddPiles.Enabled);
+            UpdateButton(buttonMinusCols, EffectManager.ButtonType.minus, buttonMinusCols.Enabled);
+            UpdateButton(buttonAddCols, EffectManager.ButtonType.plus, buttonAddCols.Enabled);
 
         }
-        private void UpdateButton(Button btn, Effect.ButtonType type, bool enable)
+        private void UpdateButton(Button btn, EffectManager.ButtonType type, bool enable)
         {
             string name = $"button_{type}";
             if(!enable)
@@ -148,13 +163,28 @@ namespace NimGameProject.Forms
 
         private void LoadEffect()
         {
-            Effect.ApplyButtonHoverEffect(buttonHome, Effect.ButtonType.home);
-            Effect.ApplyButtonHoverEffect(buttonAddCols, Effect.ButtonType.plus);
-            Effect.ApplyButtonHoverEffect(buttonMinusCols, Effect.ButtonType.minus);
-            Effect.ApplyButtonHoverEffect(buttonAddPiles, Effect.ButtonType.plus);
-            Effect.ApplyButtonHoverEffect(buttonMinusPiles, Effect.ButtonType.minus);
+            EffectManager.ApplyButtonHoverEffect(buttonHome, EffectManager.ButtonType.home);
+            EffectManager.ApplyButtonHoverEffect(buttonAddCols, EffectManager.ButtonType.plus);
+            EffectManager.ApplyButtonHoverEffect(buttonMinusCols, EffectManager.ButtonType.minus);
+            EffectManager.ApplyButtonHoverEffect(buttonAddPiles, EffectManager.ButtonType.plus);
+            EffectManager.ApplyButtonHoverEffect(buttonMinusPiles, EffectManager.ButtonType.minus);
         }
 
+        private void buttonSound_Click(object sender, EventArgs e)
+        { 
+            config.SoundOn = !config.SoundOn;
+            SoundManager.UpdateConfig(config);
 
+            if(!config.SoundOn )
+            {
+                SoundManager.StopSoundTheme();
+            }
+            else
+            {
+                SoundManager.PlaySoundTheme();
+            }
+
+            UpdateButtonSound();
+        }
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
-            this.buttonHome = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -41,25 +40,14 @@
             this.buttonAddCols = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSound = new System.Windows.Forms.Button();
+            this.buttonHome = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // buttonHome
-            // 
-            this.buttonHome.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonHome.BackgroundImage")));
-            this.buttonHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonHome.FlatAppearance.BorderSize = 0;
-            this.buttonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHome.Location = new System.Drawing.Point(185, 11);
-            this.buttonHome.Name = "buttonHome";
-            this.buttonHome.Size = new System.Drawing.Size(80, 80);
-            this.buttonHome.TabIndex = 1;
-            this.buttonHome.UseVisualStyleBackColor = true;
-            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -72,12 +60,13 @@
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("DeArPix 1.94", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 800);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(450, 650);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -85,17 +74,18 @@
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.buttonHome, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(75, 43);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(56, 34);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(450, 714);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(338, 581);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -113,16 +103,17 @@
             this.tableLayoutPanel3.Controls.Add(this.label1, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.label2, 1, 3);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 121);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(2, 98);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 6;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(444, 539);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(334, 439);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // buttonMinusPiles
@@ -132,9 +123,10 @@
             this.buttonMinusPiles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonMinusPiles.FlatAppearance.BorderSize = 0;
             this.buttonMinusPiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinusPiles.Location = new System.Drawing.Point(23, 167);
+            this.buttonMinusPiles.Location = new System.Drawing.Point(17, 136);
+            this.buttonMinusPiles.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMinusPiles.Name = "buttonMinusPiles";
-            this.buttonMinusPiles.Size = new System.Drawing.Size(64, 64);
+            this.buttonMinusPiles.Size = new System.Drawing.Size(48, 52);
             this.buttonMinusPiles.TabIndex = 0;
             this.buttonMinusPiles.UseVisualStyleBackColor = true;
             this.buttonMinusPiles.Click += new System.EventHandler(this.buttonMinusPiles_Click);
@@ -146,9 +138,10 @@
             this.buttonAddPiles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonAddPiles.FlatAppearance.BorderSize = 0;
             this.buttonAddPiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddPiles.Location = new System.Drawing.Point(356, 167);
+            this.buttonAddPiles.Location = new System.Drawing.Point(268, 136);
+            this.buttonAddPiles.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddPiles.Name = "buttonAddPiles";
-            this.buttonAddPiles.Size = new System.Drawing.Size(64, 64);
+            this.buttonAddPiles.Size = new System.Drawing.Size(48, 52);
             this.buttonAddPiles.TabIndex = 1;
             this.buttonAddPiles.UseVisualStyleBackColor = true;
             this.buttonAddPiles.Click += new System.EventHandler(this.buttonAddPiles_Click);
@@ -161,9 +154,10 @@
             this.textPilesCount.FlatAppearance.BorderSize = 0;
             this.textPilesCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.textPilesCount.Font = new System.Drawing.Font("DeArPix 1.94", 20F);
-            this.textPilesCount.Location = new System.Drawing.Point(179, 156);
+            this.textPilesCount.Location = new System.Drawing.Point(134, 128);
+            this.textPilesCount.Margin = new System.Windows.Forms.Padding(2);
             this.textPilesCount.Name = "textPilesCount";
-            this.textPilesCount.Size = new System.Drawing.Size(85, 85);
+            this.textPilesCount.Size = new System.Drawing.Size(64, 69);
             this.textPilesCount.TabIndex = 2;
             this.textPilesCount.UseVisualStyleBackColor = true;
             // 
@@ -174,9 +168,10 @@
             this.buttonMinusCols.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonMinusCols.FlatAppearance.BorderSize = 0;
             this.buttonMinusCols.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinusCols.Location = new System.Drawing.Point(23, 337);
+            this.buttonMinusCols.Location = new System.Drawing.Point(17, 274);
+            this.buttonMinusCols.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMinusCols.Name = "buttonMinusCols";
-            this.buttonMinusCols.Size = new System.Drawing.Size(64, 64);
+            this.buttonMinusCols.Size = new System.Drawing.Size(48, 52);
             this.buttonMinusCols.TabIndex = 3;
             this.buttonMinusCols.UseVisualStyleBackColor = true;
             this.buttonMinusCols.Click += new System.EventHandler(this.buttonMinusCols_Click);
@@ -189,9 +184,10 @@
             this.textColsCount.FlatAppearance.BorderSize = 0;
             this.textColsCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.textColsCount.Font = new System.Drawing.Font("DeArPix 1.94", 20F);
-            this.textColsCount.Location = new System.Drawing.Point(179, 326);
+            this.textColsCount.Location = new System.Drawing.Point(134, 266);
+            this.textColsCount.Margin = new System.Windows.Forms.Padding(2);
             this.textColsCount.Name = "textColsCount";
-            this.textColsCount.Size = new System.Drawing.Size(85, 85);
+            this.textColsCount.Size = new System.Drawing.Size(64, 69);
             this.textColsCount.TabIndex = 4;
             this.textColsCount.UseVisualStyleBackColor = true;
             // 
@@ -202,9 +198,10 @@
             this.buttonAddCols.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonAddCols.FlatAppearance.BorderSize = 0;
             this.buttonAddCols.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddCols.Location = new System.Drawing.Point(356, 337);
+            this.buttonAddCols.Location = new System.Drawing.Point(268, 274);
+            this.buttonAddCols.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddCols.Name = "buttonAddCols";
-            this.buttonAddCols.Size = new System.Drawing.Size(64, 64);
+            this.buttonAddCols.Size = new System.Drawing.Size(48, 52);
             this.buttonAddCols.TabIndex = 5;
             this.buttonAddCols.UseVisualStyleBackColor = true;
             this.buttonAddCols.Click += new System.EventHandler(this.buttonAddCols_Click);
@@ -213,31 +210,84 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(128, 124);
+            this.label1.Location = new System.Drawing.Point(112, 102);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 25);
+            this.label1.Size = new System.Drawing.Size(109, 20);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Số lượng hàng tối đa";
+            this.label1.Text = "Số lượng hàng";
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(134, 294);
+            this.label2.Location = new System.Drawing.Point(94, 240);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(176, 25);
+            this.label2.Size = new System.Drawing.Size(145, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "Số lượng cột tối đa";
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 4;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.Controls.Add(this.buttonSound, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.buttonHome, 1, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(334, 80);
+            this.tableLayoutPanel4.TabIndex = 3;
+            // 
+            // buttonSound
+            // 
+            this.buttonSound.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonSound.BackgroundImage = global::NimGameProject.Properties.Resources.button_sound;
+            this.buttonSound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonSound.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSound.FlatAppearance.BorderSize = 0;
+            this.buttonSound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSound.Location = new System.Drawing.Point(190, 7);
+            this.buttonSound.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSound.Name = "buttonSound";
+            this.buttonSound.Size = new System.Drawing.Size(60, 65);
+            this.buttonSound.TabIndex = 2;
+            this.buttonSound.UseVisualStyleBackColor = true;
+            this.buttonSound.Click += new System.EventHandler(this.buttonSound_Click);
+            // 
+            // buttonHome
+            // 
+            this.buttonHome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonHome.BackgroundImage = global::NimGameProject.Properties.Resources.button_home;
+            this.buttonHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonHome.FlatAppearance.BorderSize = 0;
+            this.buttonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHome.Location = new System.Drawing.Point(83, 7);
+            this.buttonHome.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonHome.Name = "buttonHome";
+            this.buttonHome.Size = new System.Drawing.Size(60, 65);
+            this.buttonHome.TabIndex = 1;
+            this.buttonHome.UseVisualStyleBackColor = true;
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
+            // 
             // SettingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.ClientSize = new System.Drawing.Size(600, 800);
+            this.ClientSize = new System.Drawing.Size(450, 650);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(600, 800);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(450, 650);
             this.Name = "SettingForm";
             this.Text = "SettingForm";
             this.Load += new System.EventHandler(this.SettingForm_Load);
@@ -245,6 +295,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -263,5 +314,7 @@
         private System.Windows.Forms.Button buttonAddCols;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Button buttonSound;
     }
 }

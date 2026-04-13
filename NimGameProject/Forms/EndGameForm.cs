@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NimGameProject.Engine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,27 +31,29 @@ namespace NimGameProject.Forms
             {
                 if (!winnerPlayer) 
                 {
-                    pictureWinner.Image = Image.FromFile(@"D:\Download\dog.png");
+                    pictureWinner.Image = Properties.Resources.button_dog;
                 }
                 else
                 {
-                    pictureWinner.Image = Image.FromFile(@"D:\Download\cat.png");
+                    pictureWinner.Image = Properties.Resources.button_cat;
                 }
             }
             else
             {
                 if (!winnerPlayer)
                 {
-                    pictureWinner.Image = Image.FromFile(@"D:\Download\dog.png");
+                    pictureWinner.Image = Properties.Resources.button_dog;
                 }
                 else
                 {
-                    pictureWinner.Image = Image.FromFile(@"D:\Download\computer.png");
+                    pictureWinner.Image = Properties.Resources.button_computer;
                 }
             }
 
-            Effect.ApplyButtonHoverEffect(buttonHome, Effect.ButtonType.home);
-            Effect.ApplyButtonHoverEffect(buttonRestart, Effect.ButtonType.restart);
+            EffectManager.ApplyButtonHoverEffect(buttonHome, EffectManager.ButtonType.home);
+            EffectManager.ApplyButtonHoverEffect(buttonRestart, EffectManager.ButtonType.restart);
+
+            SoundManager.PlaySoundWin();
         }
 
         private void buttonHome_Click(object sender, EventArgs e)
@@ -61,6 +64,10 @@ namespace NimGameProject.Forms
         private void buttonReset_Click(object sender, EventArgs e)
         {
             RestartGame.Invoke();
+        }
+
+        private void EndGameForm_Load(object sender, EventArgs e)
+        {
         }
     }
 }

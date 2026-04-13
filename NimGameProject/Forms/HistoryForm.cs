@@ -15,7 +15,7 @@ namespace NimGameProject.Forms
 {
     public partial class HistoryForm : Form
     {
-        public event Action<(SaveData saveData, string fullPath)> HistoryButtonClicked;
+        public event Action<(SaveData saveData, string fullPath)> LoadSavedGame;
         public event Action ExitToMenu;
 
         SaveManager manager = new SaveManager();
@@ -58,7 +58,7 @@ namespace NimGameProject.Forms
             }
 
             //thêm hiệu ứng cho home
-            Effect.ApplyButtonHoverEffect(buttonHome, Effect.ButtonType.home);
+            EffectManager.ApplyButtonHoverEffect(buttonHome, EffectManager.ButtonType.home);
         }
 
         private Button createHistoryButton(string path, bool isPvP)
@@ -80,7 +80,7 @@ namespace NimGameProject.Forms
 
             button.Click += HistoryButton_Click;
 
-            Effect.ApplyTextboxHoverEffect(button);
+            EffectManager.ApplyTextboxHoverEffect(button);
 
             return button;
         }
@@ -119,7 +119,7 @@ namespace NimGameProject.Forms
             string json = File.ReadAllText(fullPath);
             SaveData data = JsonSerializer.Deserialize<SaveData>(json);
 
-            HistoryButtonClicked.Invoke((data, fullPath));
+            LoadSavedGame.Invoke((data, fullPath));
         }
 
         private void buttonHome_Click(object sender, EventArgs e)
