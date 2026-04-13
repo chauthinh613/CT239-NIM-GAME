@@ -7,7 +7,7 @@
     <ProjectGuid>{F4AB66D7-0FAD-4DC2-BCB2-16E8D6E8D1B2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>NimGameProject</RootNamespace>
-    <AssemblyName>NimGameProject</AssemblyName>
+    <AssemblyName>Nim Fruta</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -61,6 +61,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>apple.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -214,6 +217,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="apple.ico" />
     <Content Include="Sounds\sound_nom.wav" />
     <Content Include="Sounds\sound_select.wav" />
     <Content Include="Sounds\sound_switch.wav" />

@@ -1,21 +1,12 @@
-D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\NimGameProject.exe.config
-D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\NimGameProject.exe
-D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\NimGameProject.pdb
 D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.csproj.AssemblyReference.cache
 D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.Properties.Resources.resources
 D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.csproj.GenerateResource.cache
 D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.csproj.CoreCompileInputs.cache
-D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.exe
-D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.pdb
 D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.Forms.MainForm.resources
 D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.Forms.GameForm.resources
 D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.Forms.MenuForm.resources
 D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.Forms.EndGameForm.resources
 D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.Forms.SettingForm.resources
-D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\NimGameProject.exe.manifest
-D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\NimGameProject.application
-D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.exe.manifest
-D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.application
 D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\System.Buffers.dll
 D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\System.IO.Pipelines.dll
@@ -39,3 +30,12 @@ D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\NimGameProject.Form
 D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\Sounds\sound_win.wav
 D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\AxInterop.WMPLib.dll
 D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\Sounds\sound_theme.wav
+D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\Nim Fruta.exe.config
+D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\Nim Fruta.exe.manifest
+D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\Nim Fruta.application
+D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\Nim Fruta.exe
+D:\File\VisualStudioProject\NimGame\NimGameProject\bin\Debug\Nim Fruta.pdb
+D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\Nim Fruta.exe.manifest
+D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\Nim Fruta.application
+D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\Nim Fruta.exe
+D:\File\VisualStudioProject\NimGame\NimGameProject\obj\Debug\Nim Fruta.pdb
